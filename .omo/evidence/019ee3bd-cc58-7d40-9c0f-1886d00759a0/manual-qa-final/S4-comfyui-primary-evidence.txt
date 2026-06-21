@@ -1,0 +1,11 @@
+Scenario S4 exact invocation: rg primary ComfyUI evidence classes in ComfyUI analysis/source index/evidence
+
+-- class: official_docs pattern: docs.comfy.org|ComfyUI official docs|workflow API format|server routes|/object_info|/prompt|V3 custom node schema --
+
+-- class: core_repo pattern: Comfy-Org/ComfyUI|github.com/Comfy-Org/ComfyUI|117,63|pushed 2026-06-20|dc3f8f314a987d23115ed278693e76cf6e72a5a0 --
+
+-- class: issue_pr pattern: issue #8899|PR #13094|issue #7780|github.com/Comfy-Org/ComfyUI/issues/8899|github.com/Comfy-Org/ComfyUI/pull/13094|github.com/Comfy-Org/ComfyUI/issues/7780 --
+
+-- class: llm_control pattern: LLM|typed LLM graph compilation|intent graph|graph editing|schema-guided|validation|compile|workflow compiler --
+
+-- class: prior_attempts pattern: artokun/comfyui-mcp|LingyiChen-AI/comfyui-workflow-skill|MieMieeeee/comfyui-agent-skill|ComfyUI_Skills_OpenClaw|ComfyUI_Skill_CLI|MCP support demand --

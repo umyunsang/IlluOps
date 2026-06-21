@@ -1,0 +1,19 @@
+Scenario S2 exact invocation: rg -n required addendum headings in SYNTHESIS.md
+
+-- heading: Verification Addendum --
+MISSING Verification Addendum
+
+-- heading: Multi-Control Composition Addendum --
+MISSING Multi-Control Composition Addendum
+
+-- heading: Benchmark Gate Addendum --
+MISSING Benchmark Gate Addendum
+
+-- heading: Image Harness Security Addendum --
+MISSING Image Harness Security Addendum
+
+-- heading: Image Generation Harness Roadmap Addendum --
+MISSING Image Generation Harness Roadmap Addendum
+
+-- heading: Schema Addendum --
+MISSING Schema Addendum

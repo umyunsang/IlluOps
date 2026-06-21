@@ -1,0 +1,194 @@
+Scenario S4b exact invocation: rg primary ComfyUI evidence classes in ComfyUI analysis/source index/evidence using explicit file args
+
+-- class: official_docs pattern: docs.comfy.org|ComfyUI official docs|workflow API format|server routes|/object_info|/prompt|V3 custom node schema --
+evidence/image-generation-findings.md:25:| `/prompt` | Queues and validates workflows, returning prompt id or node errors. |
+evidence/image-generation-findings.md:27:| `/object_info` | Provides node type details and is the key schema source for LLM graph validation. |
+evidence/image-generation-findings.md:60:- https://docs.comfy.org/development/api-development/overview
+evidence/image-generation-findings.md:61:- https://docs.comfy.org/development/api-development/workflow-api-format
+evidence/image-generation-findings.md:62:- https://docs.comfy.org/development/comfyui-server/comms_routes
+evidence/image-generation-findings.md:63:- https://docs.comfy.org/custom-nodes/v3_migration
+evidence/image-generation-findings.md:64:- https://docs.comfy.org/custom-nodes/workflow_templates
+evidence/image-generation-findings.md:65:- https://docs.comfy.org/custom-nodes/subgraph_blueprints
+evidence/image-generation-findings.md:66:- https://docs.comfy.org/agent-tools
+evidence/image-generation-findings.md:122:- `gh issue view 8899 --repo Comfy-Org/ComfyUI` confirmed `/prompt` JSON Schema issue remains open.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:35:- `GET /object_info` and `GET /object_info/{node_class}` for node metadata.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:37:- `POST /prompt` for validating and queueing API-format workflow graphs.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:46:- ComfyUI routes docs: https://docs.comfy.org/development/comfyui-server/comms_routes
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:47:- Workflow API format docs: https://docs.comfy.org/development/api-development/workflow-api-format
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:49:- Context7 `/comfy-org/comfyui` query: `node_info`, `/object_info`, and `/prompt` implementation excerpts returned on 2026-06-20.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:84:problem: no formal specification for /prompt endpoint; workflow vs prompt format confusion; no validation/IDE support.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:90:summary: adds schemas/prompt.json and docs/api/prompt-schema.md.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:93:Implication: a production harness should ship its own conservative prompt/workflow schema layer and validate against live `/object_info`; it should not wait for a universal upstream JSON Schema.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:97:ComfyUI official docs now expose an Agent Tools / MCP section:
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:105:- https://docs.comfy.org/agent-tools
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:106:- https://docs.comfy.org/agent-tools/cloud
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:107:- https://docs.comfy.org/agent-tools/partner-mcp
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:137:3. Build a live capability index from `/object_info`, `/models`, `/system_stats`, `/workflow_templates`, and `/global_subgraphs`.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:138:4. Validate all generated graphs before `POST /prompt`.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:13:The feasibility answer is strong but bounded. An LLM harness can control ComfyUI's practical execution lifecycle and discover installed nodes, models, templates, and subgraphs. It cannot guarantee universal semantic correctness or safety for arbitrary custom nodes. Custom nodes are executable Python supply-chain surface. ComfyUI metadata tells the harness what a node declares, not what opaque code will do. Therefore the harness must compile from an intermediate typed graph, validate against live `/object_info` and route policy, pin/allowlist custom-node installs, and treat every workflow/model-card/node-doc field as untrusted data.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:27:The local ComfyUI server exposes the necessary control-plane primitives: `/prompt`, `/ws`, `/object_info`, `/models`, `/history`, `/queue`, `/interrupt`, `/free`, upload/view routes, workflow templates, and subgraphs [S7, S8]. Direct `gh` verification pinned ComfyUI master at `dc3f8f314a987d23115ed278693e76cf6e72a5a0` on 2026-06-20. Context7 confirmed that `node_info` returns declared `INPUT_TYPES`, output types, names, display name, description, module, category, and related flags.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:29:The hard gap is prompt/workflow schema and arbitrary custom-node semantics. ComfyUI issue #8899 and PR #13094 are both still open; they explicitly call out the lack of formal `/prompt` JSON Schema and workflow-vs-prompt confusion [S9, S10]. A harness should ship its own conservative schema and validate against the live capability index.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:138:3. Schema-guided graph patching from live `/object_info`.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:149:- S4: ComfyUI Agent Tools, https://docs.comfy.org/agent-tools
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:150:- S5: Comfy Cloud MCP, https://docs.comfy.org/agent-tools/cloud
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:151:- S6: Comfy Partner MCP, https://docs.comfy.org/agent-tools/partner-mcp
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:152:- S7: ComfyUI server routes, https://docs.comfy.org/development/comfyui-server/comms_routes
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:153:- S8: ComfyUI workflow API format, https://docs.comfy.org/development/api-development/workflow-api-format
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:182:- S37: ComfyUI custom nodes docs, https://docs.comfy.org/custom-nodes/backend/server_overview
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:188:- No installed local ComfyUI server was started in this session, so live `/object_info` output for the user's own custom-node set was not captured.
+research/08-comfyui-full-control-analysis.md:56:| `/prompt` POST | Validates and queues a workflow. Returns `prompt_id` and queue position, or errors and node errors. |
+research/08-comfyui-full-control-analysis.md:61:| `/object_info` and `/object_info/{node_class}` | Discovers all node types and a specific node schema. This is the foundation for typed LLM graph compilation. |
+research/08-comfyui-full-control-analysis.md:68:| V3 custom node schema | Gives a more organized node definition path with typed inputs, outputs, hidden inputs, async execution, progress reporting, and extension lifecycle. |
+research/08-comfyui-full-control-analysis.md:141:| ComfyUI official docs | Document local and cloud APIs, workflow API format, server routes, custom nodes, V3 schema, workflow templates, subgraphs, and MCP agent tools. |
+research/08-comfyui-full-control-analysis.md:214:- ComfyUI exposes the practical control plane required by a harness: `/prompt`, `/ws`, `/object_info`, `/models`, `/history`, `/queue`, `/interrupt`, `/free`, upload/view routes, `/workflow_templates`, and subgraph discovery.
+research/08-comfyui-full-control-analysis.md:215:- `/object_info` exposes node declarations such as `INPUT_TYPES`, output types, names, descriptions, categories, and module metadata. This is enough for structural graph compilation and validation.
+research/08-comfyui-full-control-analysis.md:217:- ComfyUI issue #8899 and PR #13094 remain open as of this pass; both are about adding a formal JSON Schema for the `/prompt` API format. The harness should ship its own conservative schema and validate against live `/object_info` instead of depending on upstream schema availability.
+research/00-source-index.md:133:| [ComfyUI API overview](https://docs.comfy.org/development/api-development/overview) | Compares local ComfyUI Server API and Comfy Cloud API; both use the same workflow format. |
+research/00-source-index.md:134:| [ComfyUI workflow API format](https://docs.comfy.org/development/api-development/workflow-api-format) | Defines API-format workflow JSON for programmatic graph execution. |
+research/00-source-index.md:135:| [ComfyUI server routes](https://docs.comfy.org/development/comfyui-server/comms_routes) | Documents `/prompt`, `/ws`, `/object_info`, `/models`, `/history`, `/queue`, `/interrupt`, `/free`, and upload/view routes. |
+research/00-source-index.md:136:| [ComfyUI custom nodes V3 migration](https://docs.comfy.org/custom-nodes/v3_migration) | Current custom node schema direction for typed inputs/outputs, async execution, progress, and extension lifecycle. |
+research/00-source-index.md:137:| [ComfyUI workflow templates](https://docs.comfy.org/custom-nodes/workflow_templates) | Shows how custom nodes expose example workflows for template-based harnessing. |
+research/00-source-index.md:138:| [ComfyUI subgraph blueprints](https://docs.comfy.org/custom-nodes/subgraph_blueprints) | Shows reusable subgraph blueprints for composition. |
+research/00-source-index.md:139:| [ComfyUI Agent Tools / MCP](https://docs.comfy.org/agent-tools) | Official agent/MCP direction for image, video, audio, and 3D generation. |
+research/00-source-index.md:142:| [ComfyUI issue #8899](https://github.com/Comfy-Org/ComfyUI/issues/8899) | Documents lack of formal `/prompt` API JSON Schema and automation difficulties. |
+research/00-source-index.md:143:| [ComfyUI PR #13094](https://github.com/Comfy-Org/ComfyUI/pull/13094) | Open PR attempting `/prompt` JSON Schema and docs. |
+research/00-source-index.md:156:| [ComfyUI custom node server overview](https://docs.comfy.org/custom-nodes/backend/server_overview) | Confirms custom nodes are Python classes and part of the executable runtime surface. |
+
+-- class: core_repo pattern: Comfy-Org/ComfyUI|github.com/Comfy-Org/ComfyUI|117,63|pushed 2026-06-20|dc3f8f314a987d23115ed278693e76cf6e72a5a0 --
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:27:The local ComfyUI server exposes the necessary control-plane primitives: `/prompt`, `/ws`, `/object_info`, `/models`, `/history`, `/queue`, `/interrupt`, `/free`, upload/view routes, workflow templates, and subgraphs [S7, S8]. Direct `gh` verification pinned ComfyUI master at `dc3f8f314a987d23115ed278693e76cf6e72a5a0` on 2026-06-20. Context7 confirmed that `node_info` returns declared `INPUT_TYPES`, output types, names, display name, description, module, category, and related flags.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:154:- S9: ComfyUI issue #8899, https://github.com/Comfy-Org/ComfyUI/issues/8899
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:155:- S10: ComfyUI PR #13094, https://github.com/Comfy-Org/ComfyUI/pull/13094
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:161:- S16: ComfyUI issue #7780, https://github.com/Comfy-Org/ComfyUI/issues/7780
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:16:gh repo view Comfy-Org/ComfyUI --json nameWithOwner,url,description,stargazerCount,updatedAt,defaultBranchRef
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:17:gh api repos/Comfy-Org/ComfyUI/commits/master --jq .sha
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:23:Comfy-Org/ComfyUI
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:28:HEAD: dc3f8f314a987d23115ed278693e76cf6e72a5a0
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:66:Source: https://github.com/Comfy-Org/ComfyUI/blob/dc3f8f314a987d23115ed278693e76cf6e72a5a0/server.py
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:73:gh issue view 8899 --repo Comfy-Org/ComfyUI --json title,url,state,createdAt,updatedAt,body
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:74:gh pr view 13094 --repo Comfy-Org/ComfyUI --json title,url,state,createdAt,updatedAt,body
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:119:gh issue view 7780 --repo Comfy-Org/ComfyUI --json title,url,state,createdAt,updatedAt,body
+evidence/image-generation-findings.md:38:| `Comfy-Org/ComfyUI` | 117,630 stars, 13,759 forks, GPL-3.0, pushed 2026-06-20. Description: modular diffusion GUI, API, and backend with graph/nodes interface. |
+evidence/image-generation-findings.md:39:| `Comfy-Org/ComfyUI-Manager` | 15,106 stars, 2,297 forks, GPL-3.0, pushed 2026-06-19. |
+evidence/image-generation-findings.md:40:| `artokun/comfyui-mcp` | 166 stars, 33 forks, MIT, pushed 2026-06-20. Description: Claude Code plugin and MCP server for ComfyUI with 88/89 tools, AI skills, graph editing, model/custom node management. |
+evidence/image-generation-findings.md:67:- https://github.com/Comfy-Org/ComfyUI
+evidence/image-generation-findings.md:120:- `gh repo view Comfy-Org/ComfyUI` observed 117,631 stars, updated 2026-06-20T06:39:00Z, default branch `master`.
+evidence/image-generation-findings.md:121:- `gh api repos/Comfy-Org/ComfyUI/commits/master --jq .sha` returned `dc3f8f314a987d23115ed278693e76cf6e72a5a0`.
+evidence/image-generation-findings.md:122:- `gh issue view 8899 --repo Comfy-Org/ComfyUI` confirmed `/prompt` JSON Schema issue remains open.
+evidence/image-generation-findings.md:123:- `gh pr view 13094 --repo Comfy-Org/ComfyUI` confirmed the schema PR remains open.
+evidence/image-generation-findings.md:124:- `gh issue view 7780 --repo Comfy-Org/ComfyUI` confirmed direct MCP support demand in core.
+research/00-source-index.md:141:| [ComfyUI issue #7780](https://github.com/Comfy-Org/ComfyUI/issues/7780) | Shows explicit demand for MCP support in ComfyUI core and cites separate server implementations. |
+research/00-source-index.md:142:| [ComfyUI issue #8899](https://github.com/Comfy-Org/ComfyUI/issues/8899) | Documents lack of formal `/prompt` API JSON Schema and automation difficulties. |
+research/00-source-index.md:143:| [ComfyUI PR #13094](https://github.com/Comfy-Org/ComfyUI/pull/13094) | Open PR attempting `/prompt` JSON Schema and docs. |
+research/08-comfyui-full-control-analysis.md:140:| `Comfy-Org/ComfyUI` | Active core project. GitHub metadata captured 2026-06-20: 117,630 stars, GPL-3.0, pushed 2026-06-20. Description frames ComfyUI as a modular diffusion GUI, API, and backend with graph/nodes interface. |
+research/08-comfyui-full-control-analysis.md:144:| `artokun/comfyui-mcp` | Community local/remote MCP and Claude Code plugin. GitHub README advertised 89 MCP tools, 22 AI skills, live graph editing, model/custom-node management, and auto-exposed workflows. Metadata captured 2026-06-20: MIT, 166 stars, pushed 2026-06-20. |
+research/08-comfyui-full-control-analysis.md:213:- Current ComfyUI master was pinned at `dc3f8f314a987d23115ed278693e76cf6e72a5a0` on 2026-06-20.
+
+-- class: issue_pr pattern: issue #8899|PR #13094|issue #7780|github.com/Comfy-Org/ComfyUI/issues/8899|github.com/Comfy-Org/ComfyUI/pull/13094|github.com/Comfy-Org/ComfyUI/issues/7780 --
+research/00-source-index.md:141:| [ComfyUI issue #7780](https://github.com/Comfy-Org/ComfyUI/issues/7780) | Shows explicit demand for MCP support in ComfyUI core and cites separate server implementations. |
+research/00-source-index.md:142:| [ComfyUI issue #8899](https://github.com/Comfy-Org/ComfyUI/issues/8899) | Documents lack of formal `/prompt` API JSON Schema and automation difficulties. |
+research/00-source-index.md:143:| [ComfyUI PR #13094](https://github.com/Comfy-Org/ComfyUI/pull/13094) | Open PR attempting `/prompt` JSON Schema and docs. |
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:86:PR #13094: [BOUNTY #8899] Add JSON Schema for Prompt API Format
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:131:| ComfyUI issue #7780 | OPEN, created 2025-04-24, requests MCP support in core and cites separate MCP server. | Demand for core MCP integration existed before current official MCP docs. |
+research/08-comfyui-full-control-analysis.md:217:- ComfyUI issue #8899 and PR #13094 remain open as of this pass; both are about adding a formal JSON Schema for the `/prompt` API format. The harness should ship its own conservative schema and validate against live `/object_info` instead of depending on upstream schema availability.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:29:The hard gap is prompt/workflow schema and arbitrary custom-node semantics. ComfyUI issue #8899 and PR #13094 are both still open; they explicitly call out the lack of formal `/prompt` JSON Schema and workflow-vs-prompt confusion [S9, S10]. A harness should ship its own conservative schema and validate against the live capability index.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:40:- ComfyUI issue #7780 confirms user demand for MCP in core, while noting separate wrapper implementations already existed [S16].
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:154:- S9: ComfyUI issue #8899, https://github.com/Comfy-Org/ComfyUI/issues/8899
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:155:- S10: ComfyUI PR #13094, https://github.com/Comfy-Org/ComfyUI/pull/13094
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:161:- S16: ComfyUI issue #7780, https://github.com/Comfy-Org/ComfyUI/issues/7780
+
+-- class: llm_control pattern: LLM|typed LLM graph compilation|intent graph|graph editing|schema-guided|validation|compile|workflow compiler --
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:1:# Verification: ComfyUI LLM Control Feasibility
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:7:CONFIRMED with a boundary: an LLM harness can orchestrate ComfyUI execution, discover the installed node surface, compile/validate API-format workflow graphs, queue work, observe progress, collect outputs, and reuse templates/subgraphs. It cannot guarantee semantic correctness, side-effect safety, or license/runtime availability for every arbitrary custom node from metadata alone.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:64:This is enough for a harness compiler to reject unknown node classes, missing inputs, incompatible links, invalid combo values, and out-of-range scalar values. It is not a formal proof of the behavior of arbitrary Python code behind a custom node.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:84:problem: no formal specification for /prompt endpoint; workflow vs prompt format confusion; no validation/IDE support.
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:126:| `artokun/comfyui-mcp` | 166 stars, updated 2026-06-20, description claims Claude Code plugin + MCP server, 88 tools, 14 skills, live graph editing, model/custom-node management. | Strongest current community proof that LLM/MCP-driven ComfyUI graph control is feasible. |
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:140:6. Disallow LLM-driven custom-node installation unless allowlisted and pinned.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:9:The correct product architecture is a skill-first, ComfyUI-aware execution harness. Do not port ComfyUI into the harness. Keep ComfyUI as the graph runtime, model loader, sampler host, and custom-node ecosystem. Build an Agent Skill-compatible operating layer above it: creator intent graph -> capability index -> workflow compiler -> validator/policy gate -> ComfyUI Server API or Cloud API -> WebSocket/history observer -> visual evaluator -> export/provenance bundle.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:13:The feasibility answer is strong but bounded. An LLM harness can control ComfyUI's practical execution lifecycle and discover installed nodes, models, templates, and subgraphs. It cannot guarantee universal semantic correctness or safety for arbitrary custom nodes. Custom nodes are executable Python supply-chain surface. ComfyUI metadata tells the harness what a node declares, not what opaque code will do. Therefore the harness must compile from an intermediate typed graph, validate against live `/object_info` and route policy, pin/allowlist custom-node installs, and treat every workflow/model-card/node-doc field as untrusted data.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:19:Agent Skills are a portable package shape: `SKILL.md` plus optional `scripts/`, `references/`, and `assets/`, loaded progressively by compatible agents [S1, S2]. Codex docs explicitly describe skills as reusable workflow packages that can also be distributed via plugins [S2]. For this harness, the skill should be the stable contract, while scripts own deterministic indexing, compilation, validation, execution, evaluation, and export.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:33:The closest public project is `artokun/comfyui-mcp`, verified on 2026-06-20 as a Claude Code plugin + MCP server with live graph editing, workflow execution/authoring, model/custom-node management, and a broad tool/skill surface [S11]. It proves feasibility of a broad agent layer, but it is still a ComfyUI-integrated control layer, not a formal guarantee for every custom-node workflow.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:39:- `HuangYuChuh/ComfyUI_Skills_OpenClaw` and `ComfyUI_Skill_CLI`: workflow-as-agent-skill packaging and execution CLIs, not universal graph editing [S14, S15].
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:42:No evidence was found for a maintained public project that fully owns all of these at once: complete workflow orchestration, arbitrary custom-node management, live graph editing, execution, skill packaging across Codex/Claude/etc., security policy, evaluation, and provenance. The ecosystem is moving toward agentability through bridges and wrappers.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:68:The recommended compiler order is synthesized from the evidence, not dictated by one paper: base model -> LoRA/adapters -> spatial controls -> SAM/Grounded-SAM masks as region gates -> IP/reference conditioning -> sampling guidance. Geometry should win over reference style when they conflict, unless the task is explicitly subject-centric.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:89:ComfyUI custom nodes are Python code. Installing them is installing executable code into the image runtime [S37]. The harness must use pinned allowlists, isolated ComfyUI profiles, minimal filesystem/network privileges, provenance logs, and no LLM-driven arbitrary installs.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:107:    compile-intent
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:127:image-harness compile-intent projects/<slug>/intent.json
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:128:image-harness validate-workflow projects/<slug>/workflows/compiled/*.json
+evidence/image-generation-findings.md:7:Build an Agent Skill-compatible LLM execution harness for image generation. The harness should let creators control not only a generative model, but also LoRA, ControlNet, SAM, SAG, computer vision algorithms, image editing, and later video/comic creation.
+evidence/image-generation-findings.md:14:LLM -> intent graph -> workflow compiler -> ComfyUI API workflow JSON -> ComfyUI runtime -> output evaluator
+evidence/image-generation-findings.md:27:| `/object_info` | Provides node type details and is the key schema source for LLM graph validation. |
+evidence/image-generation-findings.md:40:| `artokun/comfyui-mcp` | 166 stars, 33 forks, MIT, pushed 2026-06-20. Description: Claude Code plugin and MCP server for ComfyUI with 88/89 tools, AI skills, graph editing, model/custom node management. |
+evidence/image-generation-findings.md:97:2. CLI scripts for capability indexing, graph compilation, validation, execution, evaluation, and export.
+evidence/image-generation-findings.md:131:An LLM harness can control ComfyUI's execution lifecycle and installed node graph surface, but not prove arbitrary custom-node semantics. The correct plan is a skill-first ComfyUI controller with a typed intermediate intent graph, capability index, conservative compiler/validator, route policy, visual evaluation, and provenance export.
+research/00-source-index.md:27:| [Claude Code hooks](https://code.claude.com/docs/en/hooks) | Lifecycle interception points for approvals, logging, validation, and policy checks. |
+research/00-source-index.md:28:| [Claude Code subagents](https://code.claude.com/docs/en/sub-agents) | Separate context and tool permissions. Useful for review, extraction, or validation roles. |
+research/00-source-index.md:37:| [MCP tools spec](https://modelcontextprotocol.io/specification/2025-11-25/server/tools) | Tool schema, annotations, output schema validation, and human-in-the-loop recommendations. |
+research/00-source-index.md:50:| [ppt-master](https://github.com/hugohe3/ppt-master) | Reference skill package for multi-phase artifact generation with scripts, templates, live preview, validation, and export. |
+research/00-source-index.md:68:| [LLM Agent Evaluation survey](https://arxiv.org/html/2503.16416v2) | Evaluation dimensions, limitations, and gaps for sequential agent behavior. |
+research/00-source-index.md:71:| [SandboxEscapeBench](https://arxiv.org/html/2603.02277v1) | Container and sandbox escape risks for LLM agents with shell/code tools. |
+research/00-source-index.md:140:| [artokun/comfyui-mcp](https://github.com/artokun/comfyui-mcp) | Community proof point for local/remote ComfyUI MCP, Claude Code plugin, skills, graph editing, model management, and custom-node workflows. |
+research/00-source-index.md:155:| [NSA MCP Security Design Considerations](https://www.nsa.gov/Portals/75/documents/Cybersecurity/CSI_MCP_SECURITY.pdf?ver=bmgiSbNQLP6Z_GiWtRt6bg%3D%3D) | May 2026 production security guidance for MCP tool poisoning, arbitrary code execution, hidden instructions, and validation controls. |
+research/00-source-index.md:157:| [C2PA specification](https://spec.c2pa.org/) | Content provenance manifests and validation model. |
+research/08-comfyui-full-control-analysis.md:7:Yes. It is realistic to build an Agent Skill-compatible LLM execution harness that controls ComfyUI's full practical pipeline surface.
+research/08-comfyui-full-control-analysis.md:13:  -> LLM planner
+research/08-comfyui-full-control-analysis.md:16:  -> ComfyUI workflow compiler
+research/08-comfyui-full-control-analysis.md:24:ComfyUI remains the graph runtime, model loader, sampler host, and node ecosystem. The harness becomes the LLM-controlled operating layer above it.
+research/08-comfyui-full-control-analysis.md:32:- import or compile API-format workflows
+research/08-comfyui-full-control-analysis.md:49:- letting the LLM invent node links without validation
+research/08-comfyui-full-control-analysis.md:53:| Surface | Why it matters for an LLM harness |
+research/08-comfyui-full-control-analysis.md:61:| `/object_info` and `/object_info/{node_class}` | Discovers all node types and a specific node schema. This is the foundation for typed LLM graph compilation. |
+research/08-comfyui-full-control-analysis.md:72:## LLM Control Architecture
+research/08-comfyui-full-control-analysis.md:77:  B --> C["LLM planner"]
+research/08-comfyui-full-control-analysis.md:80:  E --> F["Workflow compiler"]
+research/08-comfyui-full-control-analysis.md:90:The key design decision is the `Intent graph` layer. It prevents the LLM from directly mutating brittle ComfyUI node IDs. The compiler owns node IDs, links, type checks, and resource estimates.
+research/08-comfyui-full-control-analysis.md:121:The LLM can read the index, but workflow compilation must validate against it.
+research/08-comfyui-full-control-analysis.md:129:| L2: Schema-guided graph editing | Add/remove nodes based on `object_info` and typed link rules. | Second |
+research/08-comfyui-full-control-analysis.md:144:| `artokun/comfyui-mcp` | Community local/remote MCP and Claude Code plugin. GitHub README advertised 89 MCP tools, 22 AI skills, live graph editing, model/custom-node management, and auto-exposed workflows. Metadata captured 2026-06-20: MIT, 166 stars, pushed 2026-06-20. |
+research/08-comfyui-full-control-analysis.md:154:- Let the LLM fill typed slots only: prompt, seed, size, model, LoRA, control image, mask, steps, CFG, denoise.
+research/08-comfyui-full-control-analysis.md:160:- Let the LLM select subgraphs from creator intent.
+research/08-comfyui-full-control-analysis.md:164:### Phase 3: Schema-guided graph editing
+research/08-comfyui-full-control-analysis.md:166:- Use `object_info/{node_class}` to allow LLM-proposed graph changes.
+research/08-comfyui-full-control-analysis.md:187:| Custom node supply chain | Third-party nodes can execute Python and access filesystem/network. | Allowlist, pin commits, verify hashes, use isolated ComfyUI profiles, avoid auto-install by LLM. |
+research/08-comfyui-full-control-analysis.md:189:| Graph hallucination | LLM may invent node names or invalid links. | Compile from capability index and validate against `object_info`. |
+research/08-comfyui-full-control-analysis.md:197:Feasibility: high for an LLM-controlled ComfyUI harness.
+research/08-comfyui-full-control-analysis.md:203:- Build a capability index and compiler.
+research/08-comfyui-full-control-analysis.md:205:- Add schema-guided graph editing after validation is strong.
+research/08-comfyui-full-control-analysis.md:215:- `/object_info` exposes node declarations such as `INPUT_TYPES`, output types, names, descriptions, categories, and module metadata. This is enough for structural graph compilation and validation.
+research/08-comfyui-full-control-analysis.md:223:| `artokun/comfyui-mcp` | Broadest public project found: Claude Code plugin + MCP server, live graph editing, workflow execution/authoring, model and custom-node management. Verified 166 stars and 2026-06-20 update. | Does not prove universal compatibility with every arbitrary custom-node workflow. |
+research/08-comfyui-full-control-analysis.md:229:Conclusion: no maintained public project was found that fully owns complete workflow orchestration, arbitrary custom-node management, live graph editing, execution, cross-agent skill packaging, security policy, evaluation, and provenance as one universal harness. The available evidence supports building above ComfyUI, not migrating/replacing it.
+
+-- class: prior_attempts pattern: artokun/comfyui-mcp|LingyiChen-AI/comfyui-workflow-skill|MieMieeeee/comfyui-agent-skill|ComfyUI_Skills_OpenClaw|ComfyUI_Skill_CLI|MCP support demand --
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:114:gh repo view artokun/comfyui-mcp --json nameWithOwner,description,url,stargazerCount,updatedAt,defaultBranchRef,isArchived
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:115:gh repo view MieMieeeee/comfyui-agent-skill --json nameWithOwner,description,url,stargazerCount,updatedAt,defaultBranchRef,isArchived
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:116:gh repo view HuangYuChuh/ComfyUI_Skill_CLI --json nameWithOwner,description,url,stargazerCount,updatedAt,defaultBranchRef,isArchived
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:117:gh repo view HuangYuChuh/ComfyUI_Skills_OpenClaw --json nameWithOwner,description,url,stargazerCount,updatedAt,defaultBranchRef,isArchived
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:126:| `artokun/comfyui-mcp` | 166 stars, updated 2026-06-20, description claims Claude Code plugin + MCP server, 88 tools, 14 skills, live graph editing, model/custom-node management. | Strongest current community proof that LLM/MCP-driven ComfyUI graph control is feasible. |
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:127:| `MieMieeeee/comfyui-agent-skill` | 86 stars, updated 2026-06-16, description says agents run registered ComfyUI workflows through a local server with structured JSON outputs. | Direct Agent Skill-style wrapper pattern. |
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:128:| `HuangYuChuh/ComfyUI_Skill_CLI` | 26 stars, updated 2026-06-11, agent-friendly CLI for managing/executing workflow skills. | CLI layer for ComfyUI workflow skills. |
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:129:| `HuangYuChuh/ComfyUI_Skills_OpenClaw` | 324 stars, updated 2026-06-18, claims OpenClaw/Hermes/Codex/Claude Code skill compatibility. | Evidence of cross-agent skill packaging for ComfyUI workflows. |
+.omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md:130:| `LingyiChen-AI/comfyui-workflow-skill` | 312 stars, updated 2026-06-20, description says natural language to workflow JSON, 34 templates, 360+ node definitions. | Evidence of natural-language workflow generation as a skill. |
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:33:The closest public project is `artokun/comfyui-mcp`, verified on 2026-06-20 as a Claude Code plugin + MCP server with live graph editing, workflow execution/authoring, model/custom-node management, and a broad tool/skill surface [S11]. It proves feasibility of a broad agent layer, but it is still a ComfyUI-integrated control layer, not a formal guarantee for every custom-node workflow.
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:37:- `LingyiChen-AI/comfyui-workflow-skill`: natural language to importable workflow JSON, template-first, not a live control plane [S12].
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:38:- `MieMieeeee/comfyui-agent-skill`: registered-workflow execution through local/self-hosted ComfyUI, structured JSON outputs, not arbitrary graph manipulation [S13].
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:39:- `HuangYuChuh/ComfyUI_Skills_OpenClaw` and `ComfyUI_Skill_CLI`: workflow-as-agent-skill packaging and execution CLIs, not universal graph editing [S14, S15].
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:156:- S11: artokun/comfyui-mcp, https://github.com/artokun/comfyui-mcp
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:157:- S12: LingyiChen-AI/comfyui-workflow-skill, https://github.com/LingyiChen-AI/comfyui-workflow-skill
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:158:- S13: MieMieeeee/comfyui-agent-skill, https://github.com/MieMieeeee/comfyui-agent-skill
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:159:- S14: HuangYuChuh/ComfyUI_Skills_OpenClaw, https://github.com/HuangYuChuh/ComfyUI_Skills_OpenClaw
+.omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md:160:- S15: HuangYuChuh/ComfyUI_Skill_CLI, https://github.com/HuangYuChuh/ComfyUI_Skill_CLI
+evidence/image-generation-findings.md:40:| `artokun/comfyui-mcp` | 166 stars, 33 forks, MIT, pushed 2026-06-20. Description: Claude Code plugin and MCP server for ComfyUI with 88/89 tools, AI skills, graph editing, model/custom node management. |
+evidence/image-generation-findings.md:68:- https://github.com/artokun/comfyui-mcp
+evidence/image-generation-findings.md:124:- `gh issue view 7780 --repo Comfy-Org/ComfyUI` confirmed direct MCP support demand in core.
+evidence/image-generation-findings.md:125:- `gh repo view artokun/comfyui-mcp` observed 166 stars and updated 2026-06-20.
+evidence/image-generation-findings.md:126:- `gh repo view LingyiChen-AI/comfyui-workflow-skill` observed 312 stars and updated 2026-06-20.
+evidence/image-generation-findings.md:127:- `gh repo view MieMieeeee/comfyui-agent-skill` observed 86 stars and updated 2026-06-16.
+research/00-source-index.md:140:| [artokun/comfyui-mcp](https://github.com/artokun/comfyui-mcp) | Community proof point for local/remote ComfyUI MCP, Claude Code plugin, skills, graph editing, model management, and custom-node workflows. |
+research/00-source-index.md:144:| [LingyiChen-AI/comfyui-workflow-skill](https://github.com/LingyiChen-AI/comfyui-workflow-skill) | Natural language to ComfyUI workflow JSON skill. |
+research/00-source-index.md:145:| [MieMieeeee/comfyui-agent-skill](https://github.com/MieMieeeee/comfyui-agent-skill) | Agent Skill-style registered ComfyUI workflow executor. |
+research/00-source-index.md:146:| [HuangYuChuh/ComfyUI_Skills_OpenClaw](https://github.com/HuangYuChuh/ComfyUI_Skills_OpenClaw) | Cross-agent ComfyUI workflow skill packaging for OpenClaw, Hermes, Codex, and Claude Code. |
+research/00-source-index.md:147:| [HuangYuChuh/ComfyUI_Skill_CLI](https://github.com/HuangYuChuh/ComfyUI_Skill_CLI) | Agent-friendly CLI for ComfyUI workflow skills. |
+research/08-comfyui-full-control-analysis.md:144:| `artokun/comfyui-mcp` | Community local/remote MCP and Claude Code plugin. GitHub README advertised 89 MCP tools, 22 AI skills, live graph editing, model/custom-node management, and auto-exposed workflows. Metadata captured 2026-06-20: MIT, 166 stars, pushed 2026-06-20. |
+research/08-comfyui-full-control-analysis.md:223:| `artokun/comfyui-mcp` | Broadest public project found: Claude Code plugin + MCP server, live graph editing, workflow execution/authoring, model and custom-node management. Verified 166 stars and 2026-06-20 update. | Does not prove universal compatibility with every arbitrary custom-node workflow. |
+research/08-comfyui-full-control-analysis.md:224:| `LingyiChen-AI/comfyui-workflow-skill` | Natural-language to ready ComfyUI workflow JSON with templates and node definitions. Verified 312 stars and 2026-06-20 update. | Workflow generator, not a live runtime/control plane. |
+research/08-comfyui-full-control-analysis.md:225:| `MieMieeeee/comfyui-agent-skill` | Agent Skill-style local/self-hosted registered workflow executor returning structured JSON. | Registered workflows only. |
+research/08-comfyui-full-control-analysis.md:226:| `HuangYuChuh/ComfyUI_Skills_OpenClaw` | Turns ComfyUI workflows into callable skills for OpenClaw, Hermes, Codex, and Claude Code. | Skill/CLI wrapper, not arbitrary graph surgery. |

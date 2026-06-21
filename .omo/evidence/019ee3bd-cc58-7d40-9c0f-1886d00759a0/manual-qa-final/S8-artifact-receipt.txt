@@ -1,0 +1,18 @@
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S2-required-headings.txt
+     565 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S2-required-headings.txt
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S4b-comfyui-primary-evidence.txt
+   38709 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S4b-comfyui-primary-evidence.txt
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S5-git-status.txt
+     314 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S5-git-status.txt
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S4-comfyui-primary-evidence.txt
+     925 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S4-comfyui-primary-evidence.txt
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S7-implementation-file-inventory.txt
+      92 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S7-implementation-file-inventory.txt
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S3-source-backed-evidence.txt
+   37769 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S3-source-backed-evidence.txt
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S1-artifact-existence.txt
+     583 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S1-artifact-existence.txt
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S2b-required-headings-wide.txt
+     882 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S2b-required-headings-wide.txt
+.omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S6-goals-json.txt
+     466 .omo/evidence/019ee3bd-cc58-7d40-9c0f-1886d00759a0/manual-qa-final/S6-goals-json.txt
