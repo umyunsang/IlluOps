@@ -1,0 +1,1313 @@
+{
+  "generated_at": "2026-06-21T00:00:00+09:00",
+  "collection_method": "manual ultraresearch; no automated archive script",
+  "source_ledger": "references/manual-deep-research-20260621/source-ledger.json",
+  "rows": [
+    {
+      "row_type": "claim",
+      "claim_id": "F-1",
+      "title": "Agent Skills packaging and fallback",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "42, 112",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls",
+      "source_ids": [
+        "openai-codex-skills",
+        "openai-tools-skills-api",
+        "openai-skills-api-cookbook"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://developers.openai.com/codex/skills",
+        "https://developers.openai.com/api/docs/guides/tools-skills",
+        "https://developers.openai.com/cookbook/examples/skills_in_api"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "OpenAI Agent Skills docs/API/repo replace stale Anthropic-only note with current packaging surfaces.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-2",
+      "title": "AG-UI browser event vocabulary",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "43, 96",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls",
+      "source_ids": [
+        "ag-ui-events",
+        "ag-ui-interrupts",
+        "ag-ui-core-events-reference",
+        "ag-ui-core-types-reference"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://docs.ag-ui.com/concepts/events",
+        "https://docs.ag-ui.com/concepts/interrupts",
+        "https://docs.ag-ui.com/sdk/js/core/events",
+        "https://docs.ag-ui.com/sdk/js/core/types"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "Project-selected vocabulary; strict wire compatibility remains separately approved.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-3",
+      "title": "A2A optional remote interop",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "44, 94",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls",
+      "source_ids": [
+        "a2a-latest-spec",
+        "a2a-v1-announcement",
+        "a2a-agent-discovery",
+        "a2a-definitions"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://a2a-protocol.org/latest/specification/",
+        "https://a2a-protocol.org/latest/announcing-1.0/",
+        "https://a2a-protocol.org/latest/topics/agent-discovery/",
+        "https://a2a-protocol.org/latest/definitions/"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "Ledger uses current A2A latest docs and definitions; version wording must be refreshed again before speckit-plan.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-4",
+      "title": "Comfy Cloud execution API",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "45, 65-71",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls_with_experimental_caveat",
+      "source_ids": [
+        "comfy-cloud-overview",
+        "comfy-cloud-api-reference"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://docs.comfy.org/development/cloud/overview",
+        "https://docs.comfy.org/development/cloud/api-reference"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/image-runtime-optional.md"
+      ],
+      "gaps_or_caveats": "Comfy Cloud docs are current but experimental/drift-prone, so future adapter must contract-test and fail closed.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-5",
+      "title": "Civitai/AIR open model ecosystem",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "46, 104-108",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls",
+      "source_ids": [
+        "comfy-cloud-get-started",
+        "civitai-developer",
+        "civitai-air-guide"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://docs.comfy.org/get_started/cloud",
+        "https://developer.civitai.com",
+        "https://developer.civitai.com/site/guide/air"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/image-runtime-optional.md"
+      ],
+      "gaps_or_caveats": "Civitai AIR and Comfy Cloud get-started sources cover image-pack ecosystem context.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-6",
+      "title": "PPTAgent/PresentBench/UniPPTBench presentation pack evidence",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "47, 116, 897",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_with_watch_item",
+      "source_ids": [
+        "pptagent-paper",
+        "pptagent-repo",
+        "presentbench-homepage",
+        "presentbench-repo",
+        "slidesgen-bench-paper",
+        "slidesgen-bench-repo",
+        "unipptbench-paper",
+        "python-pptx-docs",
+        "python-pptx-repo",
+        "pptxgenjs-docs",
+        "python-docx-docs",
+        "openxml-sdk-docs",
+        "presentbench-dataset",
+        "presentbench-paper",
+        "slides-align-dataset",
+        "python-pptx-presentation-api",
+        "python-pptx-slides-api",
+        "python-docx-table-api",
+        "pptxgenjs-charts",
+        "pptxgenjs-masters",
+        "openxml-presentation-structure",
+        "openxml-working-with-slides"
+      ],
+      "source_statuses": [
+        "primary_dataset_confirmed",
+        "primary_fallback_confirmed",
+        "primary_url_confirmed",
+        "watch_item_primary_paper_only"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2501.03936",
+        "https://github.com/icip-cas/PPTAgent",
+        "https://presentbench.github.io/",
+        "https://github.com/PresentBench/PresentBench",
+        "https://arxiv.org/abs/2601.09487",
+        "https://github.com/YunqiaoYang/SlidesGen-Bench",
+        "https://arxiv.org/abs/2605.17356",
+        "https://python-pptx.readthedocs.io/en/latest/user/quickstart.html",
+        "https://github.com/scanny/python-pptx",
+        "https://gitbrent.github.io/PptxGenJS/",
+        "https://python-docx.readthedocs.io/en/latest/user/quickstart.html",
+        "https://learn.microsoft.com/en-us/office/open-xml/open-xml-sdk",
+        "https://huggingface.co/datasets/lynnzuo/PresentBench",
+        "https://arxiv.org/abs/2603.07244",
+        "https://huggingface.co/datasets/Yqy6/Slides-Align",
+        "https://python-pptx.readthedocs.io/en/latest/api/presentation.html",
+        "https://python-pptx.readthedocs.io/en/latest/api/slides.html",
+        "https://python-docx.readthedocs.io/en/latest/api/table.html",
+        "https://gitbrent.github.io/PptxGenJS/docs/api-charts/",
+        "https://gitbrent.github.io/PptxGenJS/docs/masters/",
+        "https://learn.microsoft.com/en-us/office/open-xml/presentation/structure-of-a-presentationml-document",
+        "https://learn.microsoft.com/en-us/office/open-xml/presentation/working-with-presentation-slides"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/presentation-document-pack.md"
+      ],
+      "gaps_or_caveats": "PPTAgent, PresentBench, SlidesGen-Bench, datasets, and tooling docs are covered; UniPPTBench remains paper-only watch item.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-7",
+      "title": "OWASP agentic security",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "48, 25-27",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_url_with_manual_download_provenance",
+      "source_ids": [
+        "owasp-agentic-top10-2026",
+        "owasp-aiuc-crosswalk",
+        "owasp-aiuc-crosswalk-download"
+      ],
+      "source_statuses": [
+        "manual_provenance_required",
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+        "https://genai.owasp.org/resource/aiuc-1-crosswalks-owasp-top-10-for-agentic-applications/",
+        "https://genai.owasp.org/download/54627/?tmstv=1779726713"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/owasp-agentic-agentdojo.md"
+      ],
+      "gaps_or_caveats": "Primary OWASP resource page is confirmed; direct download endpoint returned No Access HTML in this environment, so no saved PDF is claimed.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-8",
+      "title": "AgentDojo and AgentDyn prompt-injection fixtures",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "49, 110-115",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls",
+      "source_ids": [
+        "agentdojo-repo",
+        "agentdojo-paper",
+        "agentdyn-paper",
+        "agentdyn-repo"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://github.com/ethz-spylab/agentdojo",
+        "https://arxiv.org/abs/2406.13352",
+        "https://arxiv.org/abs/2602.03117",
+        "https://github.com/SaFo-Lab/AgentDyn"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/owasp-agentic-agentdojo.md"
+      ],
+      "gaps_or_caveats": "AgentDyn row uses arXiv + repo found in ultraresearch; do not use unverified WASP/WASP-like names.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-9",
+      "title": "MCP optional tool/data interop and security",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "50, 85-92",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls_with_advisory_split",
+      "source_ids": [
+        "mcp-released-spec",
+        "mcp-security-best-practices",
+        "mcp-authorization-draft",
+        "owasp-secure-mcp-server-guide",
+        "owasp-third-party-mcp-cheatsheet",
+        "mcp-released-authorization",
+        "mcp-released-auth-security"
+      ],
+      "source_statuses": [
+        "draft_or_advisory",
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://modelcontextprotocol.io/specification/2025-11-25",
+        "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+        "https://modelcontextprotocol.io/specification/draft/basic/authorization",
+        "https://genai.owasp.org/resource/a-practical-guide-for-secure-mcp-server-development/",
+        "https://genai.owasp.org/resource/cheatsheet-a-practical-guide-for-securely-using-third-party-mcp-servers-1-0/",
+        "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+        "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization/security-considerations"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/owasp-agentic-agentdojo.md",
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "Released 2025-11-25 MCP docs are primary; draft authorization stays advisory.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-10",
+      "title": "OpenTelemetry GenAI telemetry vocabulary",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "51, 109",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_development_status_only",
+      "source_ids": [
+        "otel-genai-repo",
+        "otel-genai-readme"
+      ],
+      "source_statuses": [
+        "development_status_primary"
+      ],
+      "source_urls": [
+        "https://github.com/open-telemetry/semantic-conventions-genai",
+        "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "Development repo is current but not load-bearing; SQLite/exported manifests remain authoritative.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-11",
+      "title": "SQLite WAL durable substrate",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "52, 73-81, 889",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_url",
+      "source_ids": [
+        "sqlite-wal"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://sqlite.org/wal.html"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "Same-host WAL constraint is explicit and must remain in future spec.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-12",
+      "title": "Optional OpenAI image provider profile",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "53, 101-103",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_optional_provider_context",
+      "source_ids": [
+        "openai-image-guide",
+        "openai-models",
+        "openai-gpt-image-2"
+      ],
+      "source_statuses": [
+        "optional_context"
+      ],
+      "source_urls": [
+        "https://developers.openai.com/api/docs/guides/image-generation",
+        "https://developers.openai.com/api/docs/models",
+        "https://developers.openai.com/api/docs/models/gpt-image-2"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/image-runtime-optional.md",
+        "provenance/optional-downgrades.md"
+      ],
+      "gaps_or_caveats": "Provider profile support is optional; not the image-pack core and not a substitute for presentation pack evidence.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "F-13",
+      "title": "CycloneDX ML-BOM and SPDX AI/dataset standards",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "54, 117-124",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_saved_and_primary_urls",
+      "source_ids": [
+        "cyclonedx-mlbom",
+        "cyclonedx-aimlbom-guide",
+        "spdx-ai-profile",
+        "spdx-3-0-1-pdf",
+        "cyclonedx-old-ai-bom-404",
+        "cyclonedx-bom-1-7-schema",
+        "ecma-424-first-edition-pdf",
+        "spdx-3-model-readme",
+        "spdx-3-model-changelog"
+      ],
+      "source_statuses": [
+        "historical_pdf",
+        "primary_model_repo_confirmed",
+        "primary_schema_confirmed",
+        "primary_url_confirmed",
+        "profile_drift_context",
+        "retired_404_replaced",
+        "saved_pdf"
+      ],
+      "source_urls": [
+        "https://cyclonedx.org/capabilities/mlbom/",
+        "https://cyclonedx.org/guides/OWASP_CycloneDX-Authoritative-Guide-to-AI-ML-BOM-en.pdf",
+        "https://spdx.dev/learn/areas-of-interest/ai/",
+        "https://spdx.dev/wp-content/uploads/sites/31/2024/12/SPDX-3.0.1-1.pdf",
+        "https://cyclonedx.org/capabilities/ai-bom/",
+        "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.7.schema.json",
+        "https://ecma-international.org/wp-content/uploads/ECMA-424_1st_edition_june_2024.pdf",
+        "https://raw.githubusercontent.com/spdx/spdx-3-model/develop/README.md",
+        "https://raw.githubusercontent.com/spdx/spdx-3-model/develop/CHANGELOG.md"
+      ],
+      "saved_artifacts": [
+        "sources/cyclonedx-authoritative-guide-ai-ml-bom.pdf",
+        "sources/spdx-3.0.1-specification.pdf"
+      ],
+      "provenance_notes": [
+        "provenance/cyclonedx-spdx.md"
+      ],
+      "gaps_or_caveats": "Includes saved CycloneDX guide PDF, saved SPDX 3.0.1 PDF, schema row, and retired 404 replacement note.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "R2.4",
+      "title": "SQLite-WAL source-of-truth state decision",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "73-81, 889",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_url",
+      "source_ids": [
+        "sqlite-wal"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://sqlite.org/wal.html"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "Manual references support source-refresh only; no product implementation started.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "R2.5",
+      "title": "Protocol alignment baseline",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "83-97",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls_with_optional_ports",
+      "source_ids": [
+        "a2a-latest-spec",
+        "mcp-released-spec",
+        "ag-ui-events",
+        "ag-ui-interrupts",
+        "ag-ui-core-events-reference",
+        "ag-ui-core-types-reference",
+        "a2a-v1-announcement",
+        "a2a-agent-discovery",
+        "a2a-definitions",
+        "mcp-security-best-practices",
+        "mcp-authorization-draft",
+        "owasp-secure-mcp-server-guide",
+        "owasp-third-party-mcp-cheatsheet",
+        "mcp-released-authorization",
+        "mcp-released-auth-security"
+      ],
+      "source_statuses": [
+        "draft_or_advisory",
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://a2a-protocol.org/latest/specification/",
+        "https://modelcontextprotocol.io/specification/2025-11-25",
+        "https://docs.ag-ui.com/concepts/events",
+        "https://docs.ag-ui.com/concepts/interrupts",
+        "https://docs.ag-ui.com/sdk/js/core/events",
+        "https://docs.ag-ui.com/sdk/js/core/types",
+        "https://a2a-protocol.org/latest/announcing-1.0/",
+        "https://a2a-protocol.org/latest/topics/agent-discovery/",
+        "https://a2a-protocol.org/latest/definitions/",
+        "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+        "https://modelcontextprotocol.io/specification/draft/basic/authorization",
+        "https://genai.owasp.org/resource/a-practical-guide-for-secure-mcp-server-development/",
+        "https://genai.owasp.org/resource/cheatsheet-a-practical-guide-for-securely-using-third-party-mcp-servers-1-0/",
+        "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+        "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization/security-considerations"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/owasp-agentic-agentdojo.md",
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "MCP/A2A/AG-UI are alignment baselines, not mandatory core dependencies.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "R2.6",
+      "title": "Same-host concurrency and A2A export handoff boundary",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "99-108",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls",
+      "source_ids": [
+        "a2a-latest-spec",
+        "sqlite-wal",
+        "a2a-v1-announcement",
+        "a2a-agent-discovery",
+        "a2a-definitions"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://a2a-protocol.org/latest/specification/",
+        "https://sqlite.org/wal.html",
+        "https://a2a-protocol.org/latest/announcing-1.0/",
+        "https://a2a-protocol.org/latest/topics/agent-discovery/",
+        "https://a2a-protocol.org/latest/definitions/"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "SQLite WAL plus A2A docs support the local-vs-remote split.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "R2.10",
+      "title": "Standards pinning and mature OSS-before-bespoke gate",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "117-124",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_saved_and_primary_urls",
+      "source_ids": [
+        "cyclonedx-mlbom",
+        "cyclonedx-aimlbom-guide",
+        "spdx-ai-profile",
+        "sigstore-cosign-attestation",
+        "slsa-v1-2",
+        "intoto-attestation-spec",
+        "syft-docs",
+        "grype-docs",
+        "scorecard-checks",
+        "spdx-3-0-1-pdf",
+        "openai-codex-skills",
+        "openai-tools-skills-api",
+        "openai-skills-api-cookbook",
+        "otel-genai-repo",
+        "otel-genai-readme",
+        "cyclonedx-bom-1-7-schema",
+        "spdx-3-model-readme",
+        "syft-scan-targets",
+        "syft-output-formats",
+        "grype-scan-targets",
+        "grype-data-sources",
+        "grype-db-architecture",
+        "scorecard-probes"
+      ],
+      "source_statuses": [
+        "development_status_primary",
+        "primary_model_repo_confirmed",
+        "primary_schema_confirmed",
+        "primary_url_confirmed",
+        "saved_pdf"
+      ],
+      "source_urls": [
+        "https://cyclonedx.org/capabilities/mlbom/",
+        "https://cyclonedx.org/guides/OWASP_CycloneDX-Authoritative-Guide-to-AI-ML-BOM-en.pdf",
+        "https://spdx.dev/learn/areas-of-interest/ai/",
+        "https://docs.sigstore.dev/cosign/verifying/attestation/",
+        "https://slsa.dev/spec/v1.2/",
+        "https://github.com/in-toto/attestation/blob/main/spec/README.md",
+        "https://oss.anchore.com/docs/guides/sbom/getting-started/",
+        "https://oss.anchore.com/docs/guides/vulnerability/getting-started/",
+        "https://github.com/ossf/scorecard/blob/main/docs/checks.md",
+        "https://spdx.dev/wp-content/uploads/sites/31/2024/12/SPDX-3.0.1-1.pdf",
+        "https://developers.openai.com/codex/skills",
+        "https://developers.openai.com/api/docs/guides/tools-skills",
+        "https://developers.openai.com/cookbook/examples/skills_in_api",
+        "https://github.com/open-telemetry/semantic-conventions-genai",
+        "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md",
+        "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.7.schema.json",
+        "https://raw.githubusercontent.com/spdx/spdx-3-model/develop/README.md",
+        "https://oss.anchore.com/docs/guides/sbom/scan-targets/",
+        "https://oss.anchore.com/docs/guides/sbom/formats/",
+        "https://oss.anchore.com/docs/guides/vulnerability/scan-targets/",
+        "https://oss.anchore.com/docs/reference/grype/data-sources/",
+        "https://oss.anchore.com/docs/architecture/grype-db/",
+        "https://github.com/ossf/scorecard/blob/main/docs/probes.md"
+      ],
+      "saved_artifacts": [
+        "sources/cyclonedx-authoritative-guide-ai-ml-bom.pdf",
+        "sources/spdx-3.0.1-specification.pdf"
+      ],
+      "provenance_notes": [
+        "provenance/cyclonedx-spdx.md",
+        "provenance/protocol-runtime.md",
+        "provenance/supply-chain-runtime.md"
+      ],
+      "gaps_or_caveats": "Includes CycloneDX/SPDX, Sigstore/SLSA/in-toto, Syft/Grype/Scorecard, Agent Skills, OTel caveat.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "R2.11",
+      "title": "Sandbox/runtime source gate",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "60, 786, 801",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls",
+      "source_ids": [
+        "wasmtime-security",
+        "wasi-capability-model",
+        "wasmtime-wasi-capabilities"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://docs.wasmtime.dev/security.html",
+        "https://wasi.dev/",
+        "https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-capabilities.md"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/supply-chain-runtime.md"
+      ],
+      "gaps_or_caveats": "Wasmtime/WASI sources cover capability-based sandbox references.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "R2.12",
+      "title": "Security source gate",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "23-27, 25, 117-124, 801",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_with_manual_provenance_required",
+      "source_ids": [
+        "nsa-mcp-security-press",
+        "nsa-mcp-security-pdf",
+        "cisa-ai-landing",
+        "ncsc-secure-ai-collection",
+        "ncsc-secure-ai-pdf",
+        "owasp-agentic-top10-2026",
+        "owasp-aiuc-crosswalk",
+        "agentdojo-repo",
+        "agentdojo-paper",
+        "cyclonedx-mlbom",
+        "cyclonedx-aimlbom-guide",
+        "spdx-ai-profile",
+        "sigstore-cosign-attestation",
+        "slsa-v1-2",
+        "intoto-attestation-spec",
+        "syft-docs",
+        "grype-docs",
+        "scorecard-checks",
+        "wasmtime-security",
+        "wasi-capability-model",
+        "spdx-3-0-1-pdf",
+        "mcp-released-spec",
+        "mcp-security-best-practices",
+        "mcp-authorization-draft",
+        "agentdyn-paper",
+        "agentdyn-repo",
+        "owasp-secure-mcp-server-guide",
+        "owasp-third-party-mcp-cheatsheet",
+        "owasp-aiuc-crosswalk-download",
+        "owasp-aivss-crosswalk-file",
+        "owasp-aivss-crosswalk-dashboard",
+        "mcp-released-authorization",
+        "mcp-released-auth-security",
+        "cyclonedx-bom-1-7-schema",
+        "syft-scan-targets",
+        "syft-output-formats",
+        "grype-scan-targets",
+        "grype-data-sources",
+        "grype-db-architecture",
+        "scorecard-probes",
+        "wasmtime-wasi-capabilities"
+      ],
+      "source_statuses": [
+        "draft_or_advisory",
+        "manual_provenance_required",
+        "primary_schema_confirmed",
+        "primary_url_confirmed",
+        "related_primary_url_confirmed",
+        "saved_pdf"
+      ],
+      "source_urls": [
+        "https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/",
+        "https://www.nsa.gov/Portals/75/documents/Cybersecurity/CSI_MCP_SECURITY.pdf?ver=bmgiSbNQLP6Z_GiWtRt6bg%3D%3D",
+        "https://www.cisa.gov/ai",
+        "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
+        "https://www.ncsc.gov.uk/files/Guidelines-for-secure-AI-system-development.pdf",
+        "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+        "https://genai.owasp.org/resource/aiuc-1-crosswalks-owasp-top-10-for-agentic-applications/",
+        "https://github.com/ethz-spylab/agentdojo",
+        "https://arxiv.org/abs/2406.13352",
+        "https://cyclonedx.org/capabilities/mlbom/",
+        "https://cyclonedx.org/guides/OWASP_CycloneDX-Authoritative-Guide-to-AI-ML-BOM-en.pdf",
+        "https://spdx.dev/learn/areas-of-interest/ai/",
+        "https://docs.sigstore.dev/cosign/verifying/attestation/",
+        "https://slsa.dev/spec/v1.2/",
+        "https://github.com/in-toto/attestation/blob/main/spec/README.md",
+        "https://oss.anchore.com/docs/guides/sbom/getting-started/",
+        "https://oss.anchore.com/docs/guides/vulnerability/getting-started/",
+        "https://github.com/ossf/scorecard/blob/main/docs/checks.md",
+        "https://docs.wasmtime.dev/security.html",
+        "https://wasi.dev/",
+        "https://spdx.dev/wp-content/uploads/sites/31/2024/12/SPDX-3.0.1-1.pdf",
+        "https://modelcontextprotocol.io/specification/2025-11-25",
+        "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+        "https://modelcontextprotocol.io/specification/draft/basic/authorization",
+        "https://arxiv.org/abs/2602.03117",
+        "https://github.com/SaFo-Lab/AgentDyn",
+        "https://genai.owasp.org/resource/a-practical-guide-for-secure-mcp-server-development/",
+        "https://genai.owasp.org/resource/cheatsheet-a-practical-guide-for-securely-using-third-party-mcp-servers-1-0/",
+        "https://genai.owasp.org/download/54627/?tmstv=1779726713",
+        "https://github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system/blob/main/aiuc-aivss-crosswalk.md",
+        "https://aivss.owasp.org/aiuc-crosswalk/index.html",
+        "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+        "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization/security-considerations",
+        "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.7.schema.json",
+        "https://oss.anchore.com/docs/guides/sbom/scan-targets/",
+        "https://oss.anchore.com/docs/guides/sbom/formats/",
+        "https://oss.anchore.com/docs/guides/vulnerability/scan-targets/",
+        "https://oss.anchore.com/docs/reference/grype/data-sources/",
+        "https://oss.anchore.com/docs/architecture/grype-db/",
+        "https://github.com/ossf/scorecard/blob/main/docs/probes.md",
+        "https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-capabilities.md"
+      ],
+      "saved_artifacts": [
+        "sources/ncsc-guidelines-secure-ai-system-development.pdf",
+        "sources/cyclonedx-authoritative-guide-ai-ml-bom.pdf",
+        "sources/spdx-3.0.1-specification.pdf"
+      ],
+      "provenance_notes": [
+        "provenance/cyclonedx-spdx.md",
+        "provenance/nsa-cisa-ncsc.md",
+        "provenance/owasp-agentic-agentdojo.md",
+        "provenance/protocol-runtime.md",
+        "provenance/supply-chain-runtime.md"
+      ],
+      "gaps_or_caveats": "NSA and OWASP AIUC direct download sources require manual provenance due access constraints; NCSC, OWASP resource pages, AgentDojo/Dyn, CycloneDX/SPDX, supply-chain, MCP, and Wasmtime families are represented.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "Q29",
+      "title": "Localhost UI event/session protection references",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "14, 24, 801",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls",
+      "source_ids": [
+        "ag-ui-events",
+        "ag-ui-interrupts",
+        "ag-ui-core-events-reference",
+        "ag-ui-core-types-reference"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://docs.ag-ui.com/concepts/events",
+        "https://docs.ag-ui.com/concepts/interrupts",
+        "https://docs.ag-ui.com/sdk/js/core/events",
+        "https://docs.ag-ui.com/sdk/js/core/types"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/protocol-runtime.md"
+      ],
+      "gaps_or_caveats": "AG-UI supports event vocabulary only; session-security mechanics remain future implementation requirements.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "claim",
+      "claim_id": "Q37",
+      "title": "presentation_document_pack second production domain",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "6, 14, 16, 32, 747-763, 818-827, 868, 897",
+      "backlog_priority": "",
+      "plan_critical": true,
+      "replacement_status": "adequate_with_watch_item",
+      "source_ids": [
+        "pptagent-paper",
+        "pptagent-repo",
+        "presentbench-homepage",
+        "presentbench-repo",
+        "slidesgen-bench-paper",
+        "slidesgen-bench-repo",
+        "unipptbench-paper",
+        "python-pptx-docs",
+        "python-pptx-repo",
+        "pptxgenjs-docs",
+        "python-docx-docs",
+        "openxml-sdk-docs",
+        "presentbench-dataset",
+        "presentbench-paper",
+        "slides-align-dataset",
+        "python-pptx-presentation-api",
+        "python-pptx-slides-api",
+        "python-docx-table-api",
+        "pptxgenjs-charts",
+        "pptxgenjs-masters",
+        "openxml-presentation-structure",
+        "openxml-working-with-slides"
+      ],
+      "source_statuses": [
+        "primary_dataset_confirmed",
+        "primary_fallback_confirmed",
+        "primary_url_confirmed",
+        "watch_item_primary_paper_only"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2501.03936",
+        "https://github.com/icip-cas/PPTAgent",
+        "https://presentbench.github.io/",
+        "https://github.com/PresentBench/PresentBench",
+        "https://arxiv.org/abs/2601.09487",
+        "https://github.com/YunqiaoYang/SlidesGen-Bench",
+        "https://arxiv.org/abs/2605.17356",
+        "https://python-pptx.readthedocs.io/en/latest/user/quickstart.html",
+        "https://github.com/scanny/python-pptx",
+        "https://gitbrent.github.io/PptxGenJS/",
+        "https://python-docx.readthedocs.io/en/latest/user/quickstart.html",
+        "https://learn.microsoft.com/en-us/office/open-xml/open-xml-sdk",
+        "https://huggingface.co/datasets/lynnzuo/PresentBench",
+        "https://arxiv.org/abs/2603.07244",
+        "https://huggingface.co/datasets/Yqy6/Slides-Align",
+        "https://python-pptx.readthedocs.io/en/latest/api/presentation.html",
+        "https://python-pptx.readthedocs.io/en/latest/api/slides.html",
+        "https://python-docx.readthedocs.io/en/latest/api/table.html",
+        "https://gitbrent.github.io/PptxGenJS/docs/api-charts/",
+        "https://gitbrent.github.io/PptxGenJS/docs/masters/",
+        "https://learn.microsoft.com/en-us/office/open-xml/presentation/structure-of-a-presentationml-document",
+        "https://learn.microsoft.com/en-us/office/open-xml/presentation/working-with-presentation-slides"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/presentation-document-pack.md"
+      ],
+      "gaps_or_caveats": "Presentation/document pack has benchmark + tooling source coverage; UniPPTBench remains paper-only but non-blocking because other primary sources cover the pack.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P0-NSA-MCP",
+      "title": "NSA MCP Security Design Considerations press page and PDF",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "25, R2.12",
+      "backlog_priority": "P0",
+      "plan_critical": true,
+      "replacement_status": "adequate_manual_provenance_required",
+      "source_ids": [
+        "nsa-mcp-security-press",
+        "nsa-mcp-security-pdf"
+      ],
+      "source_statuses": [
+        "manual_provenance_required"
+      ],
+      "source_urls": [
+        "https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/",
+        "https://www.nsa.gov/Portals/75/documents/Cybersecurity/CSI_MCP_SECURITY.pdf?ver=bmgiSbNQLP6Z_GiWtRt6bg%3D%3D"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/nsa-cisa-ncsc.md"
+      ],
+      "gaps_or_caveats": "Official NSA URLs are current but not saved as PDFs because CLI/browser download is WAF/403-prone in this environment; do not claim archive success.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P0-CLAIM-MATRIX",
+      "title": "claim_support_matrix.json/tsv internal evidence artifact",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "R2.1 table and backlog row",
+      "backlog_priority": "P0",
+      "plan_critical": true,
+      "replacement_status": "internal_evidence_artifact_mirrored",
+      "source_ids": [],
+      "source_statuses": [],
+      "source_urls": [],
+      "saved_artifacts": [],
+      "provenance_notes": [],
+      "gaps_or_caveats": "Created as a public-safe internal evidence matrix at references/manual-deep-research-20260621/claim_support_matrix.json and mirrored to references/claim_support_matrix.json; not an external saved source artifact.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P0-HEADER-LOCAL-SAFETY",
+      "title": "header/local snapshot safety tooling gap",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "backlog row",
+      "backlog_priority": "P0",
+      "plan_critical": true,
+      "replacement_status": "superseded_for_manual_collection_not_external_source",
+      "source_ids": [],
+      "source_statuses": [],
+      "source_urls": [],
+      "saved_artifacts": [],
+      "provenance_notes": [],
+      "gaps_or_caveats": "Latest user direction forbids automated collection scripts for this task; manual ledger/card/provenance policy avoids claiming header/local snapshot archive success.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P0-PLAN-URL-EXTRACTION",
+      "title": "plan direct URL extraction tooling gap",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "backlog row",
+      "backlog_priority": "P0",
+      "plan_critical": true,
+      "replacement_status": "manual_ledger_supersedes_automated_extraction",
+      "source_ids": [],
+      "source_statuses": [],
+      "source_urls": [],
+      "saved_artifacts": [],
+      "provenance_notes": [],
+      "gaps_or_caveats": "Manual source-ledger rows carry explicit source URLs, support targets, provenance notes, and source cards instead of relying on automated bare-domain extraction.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P1-CYCLONEDX-AIBOM",
+      "title": "CycloneDX stale ai-bom replacement",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "54, 117-124",
+      "backlog_priority": "P1",
+      "plan_critical": true,
+      "replacement_status": "adequate_saved_and_replaced",
+      "source_ids": [
+        "cyclonedx-mlbom",
+        "cyclonedx-aimlbom-guide",
+        "cyclonedx-old-ai-bom-404",
+        "cyclonedx-bom-1-7-schema",
+        "ecma-424-first-edition-pdf"
+      ],
+      "source_statuses": [
+        "historical_pdf",
+        "primary_schema_confirmed",
+        "primary_url_confirmed",
+        "retired_404_replaced",
+        "saved_pdf"
+      ],
+      "source_urls": [
+        "https://cyclonedx.org/capabilities/mlbom/",
+        "https://cyclonedx.org/guides/OWASP_CycloneDX-Authoritative-Guide-to-AI-ML-BOM-en.pdf",
+        "https://cyclonedx.org/capabilities/ai-bom/",
+        "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.7.schema.json",
+        "https://ecma-international.org/wp-content/uploads/ECMA-424_1st_edition_june_2024.pdf"
+      ],
+      "saved_artifacts": [
+        "sources/cyclonedx-authoritative-guide-ai-ml-bom.pdf"
+      ],
+      "provenance_notes": [
+        "provenance/cyclonedx-spdx.md"
+      ],
+      "gaps_or_caveats": "Stale /capabilities/ai-bom URL is represented as retired_404_replaced; current ML-BOM page and saved guide PDF are primary.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P1-CISA-NCSC",
+      "title": "CISA/NCSC secure AI replacement",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "25, R2.12",
+      "backlog_priority": "P1",
+      "plan_critical": true,
+      "replacement_status": "adequate_saved_pdf",
+      "source_ids": [
+        "cisa-ai-landing",
+        "ncsc-secure-ai-collection",
+        "ncsc-secure-ai-pdf"
+      ],
+      "source_statuses": [
+        "primary_url_confirmed",
+        "saved_pdf"
+      ],
+      "source_urls": [
+        "https://www.cisa.gov/ai",
+        "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
+        "https://www.ncsc.gov.uk/files/Guidelines-for-secure-AI-system-development.pdf"
+      ],
+      "saved_artifacts": [
+        "sources/ncsc-guidelines-secure-ai-system-development.pdf"
+      ],
+      "provenance_notes": [
+        "provenance/nsa-cisa-ncsc.md"
+      ],
+      "gaps_or_caveats": "NCSC secure AI PDF is saved and checksumed; CISA AI landing remains primary URL provenance.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P1-PYTHON-PPTX",
+      "title": "python-pptx ReadTheDocs and source fallback",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "47, R2.8",
+      "backlog_priority": "P1",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_docs_and_repo_fallback",
+      "source_ids": [
+        "python-pptx-docs",
+        "python-pptx-repo",
+        "python-pptx-presentation-api",
+        "python-pptx-slides-api"
+      ],
+      "source_statuses": [
+        "primary_fallback_confirmed",
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://python-pptx.readthedocs.io/en/latest/user/quickstart.html",
+        "https://github.com/scanny/python-pptx",
+        "https://python-pptx.readthedocs.io/en/latest/api/presentation.html",
+        "https://python-pptx.readthedocs.io/en/latest/api/slides.html"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/presentation-document-pack.md"
+      ],
+      "gaps_or_caveats": "ReadTheDocs API pages and GitHub fallback are both represented.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P1-OWASP-AIUC",
+      "title": "OWASP AIUC crosswalk",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "48, R2.12",
+      "backlog_priority": "P1",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_url_with_manual_download_provenance",
+      "source_ids": [
+        "owasp-aiuc-crosswalk",
+        "owasp-aiuc-crosswalk-download",
+        "owasp-agentic-top10-2026"
+      ],
+      "source_statuses": [
+        "manual_provenance_required",
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://genai.owasp.org/resource/aiuc-1-crosswalks-owasp-top-10-for-agentic-applications/",
+        "https://genai.owasp.org/download/54627/?tmstv=1779726713",
+        "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/owasp-agentic-agentdojo.md"
+      ],
+      "gaps_or_caveats": "Primary OWASP resource page is confirmed; direct download endpoint returned No Access HTML in this environment, so no saved PDF is claimed.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P1-SUPPLY-RUNTIME",
+      "title": "Sigstore/Syft/Grype/SLSA/in-toto/Scorecard/Wasmtime/WASI",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "R2.10, R2.11, R2.12",
+      "backlog_priority": "P1",
+      "plan_critical": true,
+      "replacement_status": "adequate_primary_urls_and_saved_standards",
+      "source_ids": [
+        "cyclonedx-mlbom",
+        "cyclonedx-aimlbom-guide",
+        "spdx-ai-profile",
+        "sigstore-cosign-attestation",
+        "slsa-v1-2",
+        "intoto-attestation-spec",
+        "syft-docs",
+        "grype-docs",
+        "scorecard-checks",
+        "spdx-3-0-1-pdf",
+        "openai-codex-skills",
+        "openai-tools-skills-api",
+        "openai-skills-api-cookbook",
+        "otel-genai-repo",
+        "otel-genai-readme",
+        "cyclonedx-bom-1-7-schema",
+        "spdx-3-model-readme",
+        "syft-scan-targets",
+        "syft-output-formats",
+        "grype-scan-targets",
+        "grype-data-sources",
+        "grype-db-architecture",
+        "scorecard-probes",
+        "wasmtime-security",
+        "wasi-capability-model",
+        "wasmtime-wasi-capabilities"
+      ],
+      "source_statuses": [
+        "development_status_primary",
+        "primary_model_repo_confirmed",
+        "primary_schema_confirmed",
+        "primary_url_confirmed",
+        "saved_pdf"
+      ],
+      "source_urls": [
+        "https://cyclonedx.org/capabilities/mlbom/",
+        "https://cyclonedx.org/guides/OWASP_CycloneDX-Authoritative-Guide-to-AI-ML-BOM-en.pdf",
+        "https://spdx.dev/learn/areas-of-interest/ai/",
+        "https://docs.sigstore.dev/cosign/verifying/attestation/",
+        "https://slsa.dev/spec/v1.2/",
+        "https://github.com/in-toto/attestation/blob/main/spec/README.md",
+        "https://oss.anchore.com/docs/guides/sbom/getting-started/",
+        "https://oss.anchore.com/docs/guides/vulnerability/getting-started/",
+        "https://github.com/ossf/scorecard/blob/main/docs/checks.md",
+        "https://spdx.dev/wp-content/uploads/sites/31/2024/12/SPDX-3.0.1-1.pdf",
+        "https://developers.openai.com/codex/skills",
+        "https://developers.openai.com/api/docs/guides/tools-skills",
+        "https://developers.openai.com/cookbook/examples/skills_in_api",
+        "https://github.com/open-telemetry/semantic-conventions-genai",
+        "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md",
+        "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.7.schema.json",
+        "https://raw.githubusercontent.com/spdx/spdx-3-model/develop/README.md",
+        "https://oss.anchore.com/docs/guides/sbom/scan-targets/",
+        "https://oss.anchore.com/docs/guides/sbom/formats/",
+        "https://oss.anchore.com/docs/guides/vulnerability/scan-targets/",
+        "https://oss.anchore.com/docs/reference/grype/data-sources/",
+        "https://oss.anchore.com/docs/architecture/grype-db/",
+        "https://github.com/ossf/scorecard/blob/main/docs/probes.md",
+        "https://docs.wasmtime.dev/security.html",
+        "https://wasi.dev/",
+        "https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-capabilities.md"
+      ],
+      "saved_artifacts": [
+        "sources/cyclonedx-authoritative-guide-ai-ml-bom.pdf",
+        "sources/spdx-3.0.1-specification.pdf"
+      ],
+      "provenance_notes": [
+        "provenance/cyclonedx-spdx.md",
+        "provenance/protocol-runtime.md",
+        "provenance/supply-chain-runtime.md"
+      ],
+      "gaps_or_caveats": "All required source families now have official primary URLs and source cards.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P2-PRESENTBENCH",
+      "title": "PresentBench homepage/repo/paper/dataset",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "47, Q37",
+      "backlog_priority": "P2",
+      "plan_critical": false,
+      "replacement_status": "adequate_primary_urls_and_dataset",
+      "source_ids": [
+        "presentbench-homepage",
+        "presentbench-repo",
+        "presentbench-dataset",
+        "presentbench-paper"
+      ],
+      "source_statuses": [
+        "primary_dataset_confirmed",
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://presentbench.github.io/",
+        "https://github.com/PresentBench/PresentBench",
+        "https://huggingface.co/datasets/lynnzuo/PresentBench",
+        "https://arxiv.org/abs/2603.07244"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/presentation-document-pack.md"
+      ],
+      "gaps_or_caveats": "On-pivot for presentation_document_pack and therefore kept, not downgraded.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P2-SLIDESGEN",
+      "title": "SlidesGen-Bench repo/paper/dataset",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "47, Q37",
+      "backlog_priority": "P2",
+      "plan_critical": false,
+      "replacement_status": "adequate_primary_urls_and_dataset",
+      "source_ids": [
+        "slidesgen-bench-paper",
+        "slidesgen-bench-repo",
+        "slides-align-dataset"
+      ],
+      "source_statuses": [
+        "primary_dataset_confirmed",
+        "primary_url_confirmed"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2601.09487",
+        "https://github.com/YunqiaoYang/SlidesGen-Bench",
+        "https://huggingface.co/datasets/Yqy6/Slides-Align"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/presentation-document-pack.md"
+      ],
+      "gaps_or_caveats": "On-pivot benchmark breadth for presentation_document_pack.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P2-DATAAGENTBENCH",
+      "title": "DataAgentBench future context",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "backlog row",
+      "backlog_priority": "P2",
+      "plan_critical": false,
+      "replacement_status": "downgraded_future_context",
+      "source_ids": [
+        "dataagentbench-homepage"
+      ],
+      "source_statuses": [
+        "downgraded_future_context"
+      ],
+      "source_urls": [
+        "https://ucbepic.github.io/DataAgentBench/"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/optional-downgrades.md"
+      ],
+      "gaps_or_caveats": "Real source but off-pivot for current Q37 presentation pack; keep for future data/report/dashboard pack planning only.",
+      "review_decision": "represented_no_none"
+    },
+    {
+      "row_type": "backlog",
+      "claim_id": "P2-IMAGE-PROVIDER-PAGES",
+      "title": "Adobe/Midjourney/OpenAI image product/provider pages",
+      "plan_reference": "private_plan_anchor",
+      "plan_lines": "53, R2.9",
+      "backlog_priority": "P2",
+      "plan_critical": false,
+      "replacement_status": "downgraded_or_optional_context",
+      "source_ids": [
+        "openai-image-guide",
+        "adobe-firefly",
+        "midjourney-homepage",
+        "openai-models",
+        "openai-gpt-image-2"
+      ],
+      "source_statuses": [
+        "downgraded_future_context",
+        "optional_context"
+      ],
+      "source_urls": [
+        "https://developers.openai.com/api/docs/guides/image-generation",
+        "https://www.adobe.com/products/firefly.html",
+        "https://www.midjourney.com/",
+        "https://developers.openai.com/api/docs/models",
+        "https://developers.openai.com/api/docs/models/gpt-image-2"
+      ],
+      "saved_artifacts": [],
+      "provenance_notes": [
+        "provenance/image-runtime-optional.md",
+        "provenance/optional-downgrades.md"
+      ],
+      "gaps_or_caveats": "Optional provider/profile context only after presentation_document_pack pivot; not a blocker.",
+      "review_decision": "represented_no_none"
+    }
+  ],
+  "review_scope_note": "Public-safe matrix: internal .omo plan/evidence paths are not embedded; plan anchors are stable claim ids and line hints only."
+}

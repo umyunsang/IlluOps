@@ -1,0 +1,1124 @@
+{
+  "generated_at": "2026-06-21T00:00:00+09:00",
+  "collection_method": "manual ultraresearch; no automated archive script",
+  "access_date": "2026-06-21",
+  "sources": [
+    {
+      "id": "nsa-mcp-security-press",
+      "family": "NSA MCP Security Design Considerations",
+      "url": "https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/",
+      "priority": "P0",
+      "supports": [
+        "R2.12"
+      ],
+      "status": "manual_provenance_required",
+      "reason": "Official press page for NSA MCP CSI; CLI fetch can be WAF/403-prone, so do not claim automated snapshot success.",
+      "provenance_note": "provenance/nsa-cisa-ncsc.md"
+    },
+    {
+      "id": "nsa-mcp-security-pdf",
+      "family": "NSA MCP Security Design Considerations",
+      "url": "https://www.nsa.gov/Portals/75/documents/Cybersecurity/CSI_MCP_SECURITY.pdf?ver=bmgiSbNQLP6Z_GiWtRt6bg%3D%3D",
+      "alternate_url": "https://media.defense.gov/2026/Jun/02/2003943289/-1/-1/0/CSI_MCP_SECURITY.PDF",
+      "priority": "P0",
+      "supports": [
+        "R2.12"
+      ],
+      "status": "manual_provenance_required",
+      "reason": "Authoritative official PDF; local curl/urllib attempts returned 403, so save metadata and browser/manual provenance unless a reviewer-approved direct copy is obtained.",
+      "provenance_note": "provenance/nsa-cisa-ncsc.md"
+    },
+    {
+      "id": "cisa-ai-landing",
+      "family": "CISA AI",
+      "url": "https://www.cisa.gov/ai",
+      "priority": "P1",
+      "supports": [
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/nsa-cisa-ncsc.md"
+    },
+    {
+      "id": "ncsc-secure-ai-collection",
+      "family": "NCSC/CISA Secure AI System Development",
+      "url": "https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development",
+      "priority": "P1",
+      "supports": [
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/nsa-cisa-ncsc.md"
+    },
+    {
+      "id": "ncsc-secure-ai-pdf",
+      "family": "NCSC/CISA Secure AI System Development",
+      "url": "https://www.ncsc.gov.uk/files/Guidelines-for-secure-AI-system-development.pdf",
+      "priority": "P1",
+      "supports": [
+        "R2.12"
+      ],
+      "status": "saved_pdf",
+      "provenance_note": "provenance/nsa-cisa-ncsc.md",
+      "saved_path": "sources/ncsc-guidelines-secure-ai-system-development.pdf",
+      "sha256": "f61a22f012a999fdb1d9d555f484648ddc53a40cbd4313985a4e1da09dde87f9",
+      "content_type": "application/pdf",
+      "retrieval_method": "manual direct official PDF save",
+      "final_url": "https://www.ncsc.gov.uk/files/Guidelines-for-secure-AI-system-development.pdf"
+    },
+    {
+      "id": "owasp-agentic-top10-2026",
+      "family": "OWASP Agentic Security",
+      "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+      "priority": "P1",
+      "supports": [
+        "R2.12",
+        "F-7"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "owasp-aiuc-crosswalk",
+      "family": "OWASP Agentic Security",
+      "url": "https://genai.owasp.org/resource/aiuc-1-crosswalks-owasp-top-10-for-agentic-applications/",
+      "priority": "P1",
+      "supports": [
+        "R2.12",
+        "F-7"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "agentdojo-repo",
+      "family": "AgentDojo",
+      "url": "https://github.com/ethz-spylab/agentdojo",
+      "priority": "P1",
+      "supports": [
+        "R2.12",
+        "F-8"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "agentdojo-paper",
+      "family": "AgentDojo",
+      "url": "https://arxiv.org/abs/2406.13352",
+      "priority": "P1",
+      "supports": [
+        "R2.12",
+        "F-8"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "cyclonedx-mlbom",
+      "family": "CycloneDX ML-BOM",
+      "url": "https://cyclonedx.org/capabilities/mlbom/",
+      "priority": "P1",
+      "supports": [
+        "F-13",
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/cyclonedx-spdx.md"
+    },
+    {
+      "id": "cyclonedx-aimlbom-guide",
+      "family": "CycloneDX ML-BOM",
+      "url": "https://cyclonedx.org/guides/OWASP_CycloneDX-Authoritative-Guide-to-AI-ML-BOM-en.pdf",
+      "priority": "P1",
+      "supports": [
+        "F-13",
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "saved_pdf",
+      "provenance_note": "provenance/cyclonedx-spdx.md",
+      "saved_path": "sources/cyclonedx-authoritative-guide-ai-ml-bom.pdf",
+      "sha256": "38d1e9bbfe9014cd264d159d4ef5df6801fa791f95feb4225865a31245dd71be",
+      "content_type": "application/pdf",
+      "retrieval_method": "manual direct official PDF save",
+      "final_url": "https://cyclonedx.org/guides/OWASP_CycloneDX-Authoritative-Guide-to-AI-ML-BOM-en.pdf"
+    },
+    {
+      "id": "spdx-ai-profile",
+      "family": "SPDX AI/Dataset",
+      "url": "https://spdx.dev/learn/areas-of-interest/ai/",
+      "priority": "P1",
+      "supports": [
+        "F-13",
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/cyclonedx-spdx.md"
+    },
+    {
+      "id": "sigstore-cosign-attestation",
+      "family": "Sigstore/cosign",
+      "url": "https://docs.sigstore.dev/cosign/verifying/attestation/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "slsa-v1-2",
+      "family": "SLSA",
+      "url": "https://slsa.dev/spec/v1.2/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "intoto-attestation-spec",
+      "family": "in-toto",
+      "url": "https://github.com/in-toto/attestation/blob/main/spec/README.md",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "syft-docs",
+      "family": "Syft",
+      "url": "https://oss.anchore.com/docs/guides/sbom/getting-started/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "grype-docs",
+      "family": "Grype",
+      "url": "https://oss.anchore.com/docs/guides/vulnerability/getting-started/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "scorecard-checks",
+      "family": "OpenSSF Scorecard",
+      "url": "https://github.com/ossf/scorecard/blob/main/docs/checks.md",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "wasmtime-security",
+      "family": "Wasmtime/WASI sandbox",
+      "url": "https://docs.wasmtime.dev/security.html",
+      "priority": "P1",
+      "supports": [
+        "R2.11",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "wasi-capability-model",
+      "family": "Wasmtime/WASI sandbox",
+      "url": "https://wasi.dev/",
+      "priority": "P1",
+      "supports": [
+        "R2.11",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "pptagent-paper",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://arxiv.org/abs/2501.03936",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "pptagent-repo",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://github.com/icip-cas/PPTAgent",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "presentbench-homepage",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://presentbench.github.io/",
+      "priority": "P2",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "presentbench-repo",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://github.com/PresentBench/PresentBench",
+      "priority": "P2",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "slidesgen-bench-paper",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://arxiv.org/abs/2601.09487",
+      "priority": "P2",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "slidesgen-bench-repo",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://github.com/YunqiaoYang/SlidesGen-Bench",
+      "priority": "P2",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "unipptbench-paper",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://arxiv.org/abs/2605.17356",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "watch_item_primary_paper_only",
+      "provenance_note": "provenance/presentation-document-pack.md",
+      "reason": "Relevant presentation benchmark paper, but no stable public code/data surface was found in this pass; keep as watch item, not sufficient alone for F-6/Q37 closure."
+    },
+    {
+      "id": "python-pptx-docs",
+      "family": "presentation_document_pack tooling",
+      "url": "https://python-pptx.readthedocs.io/en/latest/user/quickstart.html",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "python-pptx-repo",
+      "family": "presentation_document_pack tooling",
+      "url": "https://github.com/scanny/python-pptx",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_fallback_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "pptxgenjs-docs",
+      "family": "presentation_document_pack tooling",
+      "url": "https://gitbrent.github.io/PptxGenJS/",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "python-docx-docs",
+      "family": "presentation_document_pack tooling",
+      "url": "https://python-docx.readthedocs.io/en/latest/user/quickstart.html",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "openxml-sdk-docs",
+      "family": "presentation_document_pack tooling",
+      "url": "https://learn.microsoft.com/en-us/office/open-xml/open-xml-sdk",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "dataagentbench-homepage",
+      "family": "future data-agent context",
+      "url": "https://ucbepic.github.io/DataAgentBench/",
+      "priority": "P2",
+      "supports": [
+        "future_context"
+      ],
+      "status": "downgraded_future_context",
+      "provenance_note": "provenance/optional-downgrades.md",
+      "reason": "Real benchmark source, but off-pivot for the presentation_document_pack; keep for future data-agent/report/dashboard scope only."
+    },
+    {
+      "id": "openai-image-guide",
+      "family": "optional image asset provider",
+      "url": "https://developers.openai.com/api/docs/guides/image-generation",
+      "priority": "P2",
+      "supports": [
+        "F-12_optional_provider_profile"
+      ],
+      "status": "optional_context",
+      "provenance_note": "provenance/optional-downgrades.md",
+      "reason": "Optional image-generation provider context after the presentation_document_pack pivot; not plan-critical for F-6/Q37."
+    },
+    {
+      "id": "adobe-firefly",
+      "family": "optional image asset provider",
+      "url": "https://www.adobe.com/products/firefly.html",
+      "priority": "P2",
+      "supports": [
+        "optional_asset_context"
+      ],
+      "status": "optional_context",
+      "provenance_note": "provenance/optional-downgrades.md",
+      "reason": "Optional image-asset provider context only; not a core plan reference after the presentation_document_pack pivot."
+    },
+    {
+      "id": "midjourney-homepage",
+      "family": "future image asset provider",
+      "url": "https://www.midjourney.com/",
+      "priority": "P2",
+      "supports": [
+        "future_asset_context"
+      ],
+      "status": "downgraded_future_context",
+      "provenance_note": "provenance/optional-downgrades.md",
+      "reason": "Future/optional image-provider context only; not a current plan-critical source family."
+    },
+    {
+      "id": "spdx-3-0-1-pdf",
+      "family": "SPDX AI/Dataset",
+      "url": "https://spdx.dev/wp-content/uploads/sites/31/2024/12/SPDX-3.0.1-1.pdf",
+      "priority": "P1",
+      "supports": [
+        "F-13",
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "saved_pdf",
+      "saved_path": "sources/spdx-3.0.1-specification.pdf",
+      "sha256": "f264e037426d5b0192666438e993bb2017447c71ebfe381f83c6fdcdaa5885fb",
+      "provenance_note": "provenance/cyclonedx-spdx.md",
+      "content_type": "application/pdf",
+      "retrieval_method": "manual direct official PDF save",
+      "final_url": "https://spdx.dev/wp-content/uploads/sites/31/2024/12/SPDX-3.0.1-1.pdf"
+    },
+    {
+      "id": "openai-codex-skills",
+      "family": "Agent Skills",
+      "url": "https://developers.openai.com/codex/skills",
+      "priority": "P1",
+      "supports": [
+        "F-1",
+        "R2.10"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "openai-tools-skills-api",
+      "family": "Agent Skills",
+      "url": "https://developers.openai.com/api/docs/guides/tools-skills",
+      "priority": "P1",
+      "supports": [
+        "F-1",
+        "R2.10"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "openai-skills-api-cookbook",
+      "family": "Agent Skills",
+      "url": "https://developers.openai.com/cookbook/examples/skills_in_api",
+      "priority": "P1",
+      "supports": [
+        "F-1",
+        "R2.10"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "ag-ui-events",
+      "family": "AG-UI",
+      "url": "https://docs.ag-ui.com/concepts/events",
+      "priority": "P1",
+      "supports": [
+        "F-2",
+        "Q29"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "ag-ui-interrupts",
+      "family": "AG-UI",
+      "url": "https://docs.ag-ui.com/concepts/interrupts",
+      "priority": "P1",
+      "supports": [
+        "F-2",
+        "Q29"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "a2a-latest-spec",
+      "family": "A2A",
+      "url": "https://a2a-protocol.org/latest/specification/",
+      "priority": "P1",
+      "supports": [
+        "F-3",
+        "R2.5",
+        "R2.6"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "a2a-v1-announcement",
+      "family": "A2A",
+      "url": "https://a2a-protocol.org/latest/announcing-1.0/",
+      "priority": "P1",
+      "supports": [
+        "F-3"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "a2a-agent-discovery",
+      "family": "A2A",
+      "url": "https://a2a-protocol.org/latest/topics/agent-discovery/",
+      "priority": "P1",
+      "supports": [
+        "F-3"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "mcp-released-spec",
+      "family": "MCP",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25",
+      "priority": "P1",
+      "supports": [
+        "F-9",
+        "R2.5",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "mcp-security-best-practices",
+      "family": "MCP",
+      "url": "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+      "priority": "P1",
+      "supports": [
+        "F-9",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "mcp-authorization-draft",
+      "family": "MCP",
+      "url": "https://modelcontextprotocol.io/specification/draft/basic/authorization",
+      "priority": "P1",
+      "supports": [
+        "F-9",
+        "R2.12"
+      ],
+      "status": "draft_or_advisory",
+      "provenance_note": "provenance/protocol-runtime.md",
+      "reason": "Draft MCP authorization material is useful context but must not override the released 2025-11-25 MCP spec/auth pages."
+    },
+    {
+      "id": "sqlite-wal",
+      "family": "SQLite WAL",
+      "url": "https://sqlite.org/wal.html",
+      "priority": "P1",
+      "supports": [
+        "F-11",
+        "R2.4",
+        "R2.6"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "otel-genai-repo",
+      "family": "OpenTelemetry GenAI",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai",
+      "priority": "P1",
+      "supports": [
+        "F-10",
+        "R2.10"
+      ],
+      "status": "development_status_primary",
+      "provenance_note": "provenance/protocol-runtime.md",
+      "reason": "Current primary development repository for GenAI semantic conventions; treat as moving telemetry vocabulary, not final normative standard."
+    },
+    {
+      "id": "otel-genai-readme",
+      "family": "OpenTelemetry GenAI",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md",
+      "priority": "P1",
+      "supports": [
+        "F-10",
+        "R2.10"
+      ],
+      "status": "development_status_primary",
+      "provenance_note": "provenance/protocol-runtime.md",
+      "reason": "Current development README for GenAI semantic conventions; treat as moving telemetry vocabulary, not final normative standard."
+    },
+    {
+      "id": "comfy-cloud-overview",
+      "family": "Comfy Cloud",
+      "url": "https://docs.comfy.org/development/cloud/overview",
+      "priority": "P1",
+      "supports": [
+        "F-4"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/image-runtime-optional.md"
+    },
+    {
+      "id": "comfy-cloud-api-reference",
+      "family": "Comfy Cloud",
+      "url": "https://docs.comfy.org/development/cloud/api-reference",
+      "priority": "P1",
+      "supports": [
+        "F-4"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/image-runtime-optional.md"
+    },
+    {
+      "id": "comfy-cloud-get-started",
+      "family": "Comfy Cloud",
+      "url": "https://docs.comfy.org/get_started/cloud",
+      "priority": "P1",
+      "supports": [
+        "F-5"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/image-runtime-optional.md"
+    },
+    {
+      "id": "civitai-developer",
+      "family": "Civitai AIR/Open Model Ecosystem",
+      "url": "https://developer.civitai.com",
+      "priority": "P1",
+      "supports": [
+        "F-5"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/image-runtime-optional.md"
+    },
+    {
+      "id": "civitai-air-guide",
+      "family": "Civitai AIR/Open Model Ecosystem",
+      "url": "https://developer.civitai.com/site/guide/air",
+      "priority": "P1",
+      "supports": [
+        "F-5"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/image-runtime-optional.md"
+    },
+    {
+      "id": "openai-models",
+      "family": "OpenAI image provider profile",
+      "url": "https://developers.openai.com/api/docs/models",
+      "priority": "P2",
+      "supports": [
+        "F-12_optional_provider_profile"
+      ],
+      "status": "optional_context",
+      "provenance_note": "provenance/image-runtime-optional.md",
+      "reason": "Optional OpenAI provider-profile context only; not a replacement for core presentation/document sources."
+    },
+    {
+      "id": "openai-gpt-image-2",
+      "family": "OpenAI image provider profile",
+      "url": "https://developers.openai.com/api/docs/models/gpt-image-2",
+      "priority": "P2",
+      "supports": [
+        "F-12_optional_provider_profile"
+      ],
+      "status": "optional_context",
+      "provenance_note": "provenance/image-runtime-optional.md",
+      "reason": "Optional OpenAI image model profile context only; not a replacement for core presentation/document sources."
+    },
+    {
+      "id": "agentdyn-paper",
+      "family": "AgentDyn",
+      "url": "https://arxiv.org/abs/2602.03117",
+      "priority": "P1",
+      "supports": [
+        "F-8",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "agentdyn-repo",
+      "family": "AgentDyn",
+      "url": "https://github.com/SaFo-Lab/AgentDyn",
+      "priority": "P1",
+      "supports": [
+        "F-8",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "owasp-secure-mcp-server-guide",
+      "family": "OWASP MCP Security",
+      "url": "https://genai.owasp.org/resource/a-practical-guide-for-secure-mcp-server-development/",
+      "priority": "P1",
+      "supports": [
+        "R2.12",
+        "F-9"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "owasp-third-party-mcp-cheatsheet",
+      "family": "OWASP MCP Security",
+      "url": "https://genai.owasp.org/resource/cheatsheet-a-practical-guide-for-securely-using-third-party-mcp-servers-1-0/",
+      "priority": "P1",
+      "supports": [
+        "R2.12",
+        "F-9"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "owasp-aiuc-crosswalk-download",
+      "family": "OWASP Agentic Security",
+      "url": "https://genai.owasp.org/download/54627/?tmstv=1779726713",
+      "priority": "P1",
+      "supports": [
+        "R2.12",
+        "F-7"
+      ],
+      "status": "manual_provenance_required",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md",
+      "reason": "Direct OWASP AIUC download URL was checked manually, but the endpoint returned a No Access HTML page in this environment; keep the official resource page as primary confirmed evidence and do not claim a saved download artifact."
+    },
+    {
+      "id": "owasp-aivss-crosswalk-file",
+      "family": "OWASP AIVSS",
+      "url": "https://github.com/OWASP/www-project-artificial-intelligence-vulnerability-scoring-system/blob/main/aiuc-aivss-crosswalk.md",
+      "priority": "P1",
+      "supports": [
+        "R2.12"
+      ],
+      "status": "related_primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "owasp-aivss-crosswalk-dashboard",
+      "family": "OWASP AIVSS",
+      "url": "https://aivss.owasp.org/aiuc-crosswalk/index.html",
+      "priority": "P1",
+      "supports": [
+        "R2.12"
+      ],
+      "status": "related_primary_url_confirmed",
+      "provenance_note": "provenance/owasp-agentic-agentdojo.md"
+    },
+    {
+      "id": "mcp-released-authorization",
+      "family": "MCP",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+      "priority": "P1",
+      "supports": [
+        "F-9",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "mcp-released-auth-security",
+      "family": "MCP",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization/security-considerations",
+      "priority": "P1",
+      "supports": [
+        "F-9",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "a2a-definitions",
+      "family": "A2A",
+      "url": "https://a2a-protocol.org/latest/definitions/",
+      "priority": "P1",
+      "supports": [
+        "F-3"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "ag-ui-core-events-reference",
+      "family": "AG-UI",
+      "url": "https://docs.ag-ui.com/sdk/js/core/events",
+      "priority": "P1",
+      "supports": [
+        "F-2"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "ag-ui-core-types-reference",
+      "family": "AG-UI",
+      "url": "https://docs.ag-ui.com/sdk/js/core/types",
+      "priority": "P1",
+      "supports": [
+        "F-2"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/protocol-runtime.md"
+    },
+    {
+      "id": "cyclonedx-old-ai-bom-404",
+      "family": "CycloneDX retired URL",
+      "url": "https://cyclonedx.org/capabilities/ai-bom/",
+      "priority": "P1",
+      "supports": [
+        "F-13"
+      ],
+      "status": "retired_404_replaced",
+      "provenance_note": "provenance/cyclonedx-spdx.md",
+      "reason": "Legacy ai-bom path is obsolete; canonical replacement is /capabilities/mlbom/."
+    },
+    {
+      "id": "cyclonedx-bom-1-7-schema",
+      "family": "CycloneDX ML-BOM",
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/master/schema/bom-1.7.schema.json",
+      "priority": "P1",
+      "supports": [
+        "F-13",
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_schema_confirmed",
+      "provenance_note": "provenance/cyclonedx-spdx.md"
+    },
+    {
+      "id": "ecma-424-first-edition-pdf",
+      "family": "CycloneDX ECMA-424",
+      "url": "https://ecma-international.org/wp-content/uploads/ECMA-424_1st_edition_june_2024.pdf",
+      "priority": "P2",
+      "supports": [
+        "F-13"
+      ],
+      "status": "historical_pdf",
+      "provenance_note": "provenance/cyclonedx-spdx.md"
+    },
+    {
+      "id": "spdx-3-model-readme",
+      "family": "SPDX AI/Dataset",
+      "url": "https://raw.githubusercontent.com/spdx/spdx-3-model/develop/README.md",
+      "priority": "P1",
+      "supports": [
+        "F-13",
+        "R2.10"
+      ],
+      "status": "primary_model_repo_confirmed",
+      "provenance_note": "provenance/cyclonedx-spdx.md"
+    },
+    {
+      "id": "spdx-3-model-changelog",
+      "family": "SPDX AI/Dataset",
+      "url": "https://raw.githubusercontent.com/spdx/spdx-3-model/develop/CHANGELOG.md",
+      "priority": "P2",
+      "supports": [
+        "F-13"
+      ],
+      "status": "profile_drift_context",
+      "provenance_note": "provenance/cyclonedx-spdx.md",
+      "reason": "Tracks SPDX profile naming drift/deprecation notes; use as context, not as the primary SPDX 3.0.1 spec source."
+    },
+    {
+      "id": "syft-scan-targets",
+      "family": "Syft",
+      "url": "https://oss.anchore.com/docs/guides/sbom/scan-targets/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "syft-output-formats",
+      "family": "Syft",
+      "url": "https://oss.anchore.com/docs/guides/sbom/formats/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "grype-scan-targets",
+      "family": "Grype",
+      "url": "https://oss.anchore.com/docs/guides/vulnerability/scan-targets/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "grype-data-sources",
+      "family": "Grype",
+      "url": "https://oss.anchore.com/docs/reference/grype/data-sources/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "grype-db-architecture",
+      "family": "Grype",
+      "url": "https://oss.anchore.com/docs/architecture/grype-db/",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "scorecard-probes",
+      "family": "OpenSSF Scorecard",
+      "url": "https://github.com/ossf/scorecard/blob/main/docs/probes.md",
+      "priority": "P1",
+      "supports": [
+        "R2.10",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "wasmtime-wasi-capabilities",
+      "family": "Wasmtime/WASI sandbox",
+      "url": "https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-capabilities.md",
+      "priority": "P1",
+      "supports": [
+        "R2.11",
+        "R2.12"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/supply-chain-runtime.md"
+    },
+    {
+      "id": "presentbench-dataset",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://huggingface.co/datasets/lynnzuo/PresentBench",
+      "priority": "P2",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_dataset_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "presentbench-paper",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://arxiv.org/abs/2603.07244",
+      "priority": "P2",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "slides-align-dataset",
+      "family": "presentation_document_pack benchmarks",
+      "url": "https://huggingface.co/datasets/Yqy6/Slides-Align",
+      "priority": "P2",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_dataset_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "python-pptx-presentation-api",
+      "family": "presentation_document_pack tooling",
+      "url": "https://python-pptx.readthedocs.io/en/latest/api/presentation.html",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "python-pptx-slides-api",
+      "family": "presentation_document_pack tooling",
+      "url": "https://python-pptx.readthedocs.io/en/latest/api/slides.html",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "python-docx-table-api",
+      "family": "presentation_document_pack tooling",
+      "url": "https://python-docx.readthedocs.io/en/latest/api/table.html",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "pptxgenjs-charts",
+      "family": "presentation_document_pack tooling",
+      "url": "https://gitbrent.github.io/PptxGenJS/docs/api-charts/",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "pptxgenjs-masters",
+      "family": "presentation_document_pack tooling",
+      "url": "https://gitbrent.github.io/PptxGenJS/docs/masters/",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "openxml-presentation-structure",
+      "family": "presentation_document_pack tooling",
+      "url": "https://learn.microsoft.com/en-us/office/open-xml/presentation/structure-of-a-presentationml-document",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    },
+    {
+      "id": "openxml-working-with-slides",
+      "family": "presentation_document_pack tooling",
+      "url": "https://learn.microsoft.com/en-us/office/open-xml/presentation/working-with-presentation-slides",
+      "priority": "P1",
+      "supports": [
+        "F-6",
+        "Q37"
+      ],
+      "status": "primary_url_confirmed",
+      "provenance_note": "provenance/presentation-document-pack.md"
+    }
+  ]
+}
