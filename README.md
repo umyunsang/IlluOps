@@ -1,9 +1,8 @@
 # IlluOps
 
 IlluOps is a planned Cross-Agent LLM Execution Harness for creator workflows.
-The current canonical product plan is [cross-agent-image-harness.md](cross-agent-image-harness.md).
 
-This repository is no longer a loose research dump. The earlier `research/`, `scaffold/`, and `evidence/` artifacts were removed because they predate the R2/R3 plan lock and do not represent the current product boundary.
+This repository is no longer a loose research dump. The earlier `research/`, `scaffold/`, and `evidence/` artifacts were removed because they predate the current product boundary.
 
 ## Current Plan Lock
 
@@ -17,7 +16,7 @@ Package and CLI name:
 
 Current planning status:
 
-- R2/R3 planning is the source of truth.
+- The detailed working plan remains local agent workspace material and is not published from this repository.
 - No implementation task is authorized until the spec-driven workflow is explicitly resumed.
 - `/speckit-taskstoissues` remains the only source of executable implementation tasks.
 - Image generation is reference domain pack 1, not the product boundary.
@@ -130,8 +129,7 @@ Future implementation must cover:
 
 ## Repository Contents
 
-- [cross-agent-image-harness.md](cross-agent-image-harness.md): canonical current plan.
 - [LICENSE](LICENSE): Apache-2.0 license for this repository's own content.
 - [LICENSES/README.md](LICENSES/README.md): license and third-party asset boundaries.
 
-Local agent/session artifacts such as `.omo/`, `.codex/`, `codex/`, `.claude/`, `.claude-code/`, and `claude-code/` are intentionally ignored and must not be treated as publishable source unless explicitly promoted into tracked files.
+Local agent/session artifacts such as `.omo/`, `.codex/`, `codex/`, `.claude/`, `.claude-code/`, and `claude-code/` are intentionally ignored and must not be treated as publishable source.
