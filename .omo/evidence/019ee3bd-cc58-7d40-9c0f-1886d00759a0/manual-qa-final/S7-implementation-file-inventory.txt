@@ -1,1 +1,0 @@
-Scenario S7 exact invocation: find implementation-like files outside .omo/research/evidence

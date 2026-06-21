@@ -9,3 +9,11 @@ coverage/
 .cache/
 .tmp/
 *.log
+
+# Local agent/session artifacts
+/.omo/
+/.codex/
+/codex/
+/.claude/
+/.claude-code/
+/claude-code/

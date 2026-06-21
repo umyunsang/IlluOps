@@ -1,7 +1,0 @@
-Scenario S1 exact invocation: test -s SYNTHESIS.md verify-comfyui-control.md expansion-log.md; wc -c each file
-PASS test -s .omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md
-   14662 .omo/ultraresearch/20260620-154100-image-harness/SYNTHESIS.md
-PASS test -s .omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md
-    7484 .omo/ultraresearch/20260620-154100-image-harness/verify-comfyui-control.md
-PASS test -s .omo/ultraresearch/20260620-154100-image-harness/expansion-log.md
-    5482 .omo/ultraresearch/20260620-154100-image-harness/expansion-log.md
