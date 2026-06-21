@@ -8,6 +8,7 @@ This folder stores manually selected primary-source references for the collectio
 
 - `source-ledger.json`: machine-readable source ledger with claim mapping, priority, retrieval status, and provenance notes.
 - `claim_support_matrix.json` / `claim_support_matrix.tsv`: plan/backlog claim-to-source matrix for `F-1` through `F-13`, `R2.*`, `Q29`, `Q37`, and backlog-review rows.
+- `r3_direct_edges.json` / `r3_direct_edges.tsv`: direct `source_id -> R3 item` and `claim_id -> R3 item` edges for graph navigation.
 - `provenance/`: one markdown provenance note per source family.
 - `sources/`: manually saved source copies where direct saving is appropriate and accessible.
 - `mirrors/`: reserved for reviewer-approved non-official mirrors; contains only a placeholder unless explicitly justified.
@@ -98,5 +99,6 @@ A reviewer may accept a source row when:
 - Saved official PDFs: 3, all SHA-256 checked in `sources/checksums.sha256`.
 - Claim/backlog matrix rows: 34.
 - Plan-critical rows with `replacement_status=none`: 0.
+- Current R3 direct-edge coverage: 89 source rows with direct current-R3 edges, 3 off-pivot optional/future context rows intentionally without current-R3 edges, 2,420 direct edge rows, and 102 distinct R3 item targets.
 
 The public-safe matrix is mirrored to `../claim_support_matrix.json` and `../claim_support_matrix.tsv` so older archive-verifier workflows can find the evidence, but this folder remains the source of truth for the manual deep-research pass. It intentionally uses public-safe claim anchors instead of embedding internal `.omo` plan or evidence paths.
