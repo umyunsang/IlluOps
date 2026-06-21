@@ -1,113 +1,137 @@
-# IlluOps Research 2026
+# IlluOps
 
-Date: 2026-06-20
+IlluOps is a planned Cross-Agent LLM Execution Harness for creator workflows.
+The current canonical product plan is [cross-agent-image-harness.md](cross-agent-image-harness.md).
 
-This folder is a research and design workspace for **IlluOps**, a creator-facing Cross-Agent LLM Execution Harness that can be used from Codex and Claude Code in the same practical style as `ppt-master`.
+This repository is no longer a loose research dump. The earlier `research/`, `scaffold/`, and `evidence/` artifacts were removed because they predate the R2/R3 plan lock and do not represent the current product boundary.
 
-IlluOps is a ComfyUI-powered companion layer for creators making illustrations, comics, and animation frames. It is not a fork of ComfyUI and is not affiliated with Comfy Org.
+## Current Plan Lock
 
-## Bottom Line
-
-The locked product name is:
+Product name:
 
 `IlluOps`
 
-The package and CLI name is:
+Package and CLI name:
 
-`illuops` (for example, `npx illuops`)
+`illuops`
 
-In 2026 terms, IlluOps means a packaged workflow that exposes:
+Current planning status:
 
-- An Agent Skill front door: `SKILL.md`, references, scripts, assets, and examples.
-- A deterministic execution core: CLIs, validators, project state, import/export commands, and quality gates.
-- Optional MCP tools: for structured tool calls from Codex, Claude Code, and other MCP hosts.
-- Optional A2A endpoint: for collaborating with other opaque agents or agent products.
-- Evaluation and security harnesses: benchmark tasks, sandbox checks, trace logs, and supply-chain controls.
-- A visual generation control stack: model routing, LoRA management, ControlNet and adapter control, segmentation and mask tools, guidance/sampler policy, and image/video/comic export gates.
+- R2/R3 planning is the source of truth.
+- No implementation task is authorized until the spec-driven workflow is explicitly resumed.
+- `/speckit-taskstoissues` remains the only source of executable implementation tasks.
+- Image generation is reference domain pack 1, not the product boundary.
+- `presentation_document_pack` is the locked second production domain pack.
 
-`ppt-master` is a strong reference because it is not just a prompt. It is a skill package with a serial workflow, project initialization, script-backed transforms, live preview, quality checks, and export gates.
+## Product Boundary
 
-For ComfyUI, the right strategy is not to port or reimplement ComfyUI. Keep ComfyUI as the graph execution engine. Build a higher-level LLM harness that discovers the local ComfyUI capability surface, compiles creator intent into validated workflow graphs, executes them through the ComfyUI API, observes outputs, and iterates with explicit quality gates.
+IlluOps is a reusable execution substrate:
 
-## Files
+1. Agent Skill packaging for Codex, Claude Code, and compatible agent hosts.
+2. Deterministic CLI and state contract.
+3. Manifest-first domain-pack registry and allowlist.
+4. Out-of-process domain-pack workers.
+5. Core capability brokers for side effects.
+6. SQLite-WAL durable workspace state with exported JSON/JSONL manifests.
+7. Same-host single-writer workspace and provider-job leases.
+8. Local actor identity and trust registry.
+9. Loopback-only UI sessions with one-time tokens, CSRF, origin checks, and lease revalidation.
+10. Optional MCP, A2A, AG-UI, and direct provider adapters.
 
-- `LICENSE`: Apache-2.0 license for the core repository.
-- `LICENSES/README.md`: license boundary for core code, future ComfyUI in-process extensions, and third-party creative assets.
-- `research/00-source-index.md`: source map with official docs, papers, repos, and local evidence.
-- `research/01-architecture-synthesis.md`: recommended architecture and compatibility model.
-- `research/02-2026-tech-stack.md`: concrete stack choices for a 2026 build.
-- `research/03-papers-and-benchmarks.md`: papers, benchmarks, and what to borrow from each.
-- `research/04-security-threat-model.md`: threat model and hardening checklist.
-- `research/05-build-roadmap.md`: phased roadmap from research to installable skill package.
-- `research/06-image-generation-model-trends-2026.md`: current image generation model trends and what they imply for the harness.
-- `research/07-computer-vision-control-stack.md`: LoRA, ControlNet, SAM, SAG, adapters, geometry, and post-processing control stack.
-- `research/08-comfyui-full-control-analysis.md`: whether and how an LLM can control ComfyUI's full node and workflow surface.
-- `research/09-creator-intent-graph-roadmap.md`: creator-facing intent model and roadmap toward video and comics.
-- `research/10-recent-paper-watchlist-2026.md`: recent papers and benchmarks to track while building.
-- `scaffold/SKILL.md`: draft Agent Skill entrypoint template.
-- `scaffold/image-generation-harness-SKILL.md`: image-specific Agent Skill scaffold.
-- `scaffold/AGENTS.md`: draft repository instruction template.
-- `scaffold/package-shape.md`: proposed package layout.
-- `evidence/local-findings.md`: local commands, installed tool observations, and repository metadata captured in this session.
-- `evidence/image-generation-findings.md`: image generation, ComfyUI, model, and CV-control findings captured in this session.
+The core must not import or special-case Civitai, ComfyUI, image-generation, deck, document, or provider-specific logic. All workload behavior enters through a registered domain pack and its manifest.
 
-## Recommended Product Shape
+## Domain Packs
 
-Build the first version as a skill-first repository:
+### Reference Pack 1: Image
 
-```text
-illuops/
-  AGENTS.md
-  skills/illuops/SKILL.md
-  skills/illuops/references/
-  skills/illuops/scripts/
-  skills/illuops/templates/
-  skills/illuops/workflows/
-  docs/
-  examples/
-  evals/
-```
+The image pack proves the domain-pack model with creator workflows around ComfyUI, Civitai/Hugging Face model links, workflow import, typed graph patches, review galleries, visual evaluation, provenance, and final reproducibility packages.
 
-For the image-generation target, add this layer:
+The image pack is open-model and Comfy Cloud/local ComfyUI oriented. Commercial image providers can be used only through explicit provider profiles with credential references, live spend caps, and source-refresh evidence.
 
-```text
-illuops-image-pack/
-  skills/illuops/references/model-cards/
-  skills/illuops/references/workflow-recipes/
-  skills/illuops/scripts/capability-index
-  skills/illuops/scripts/workflow-compile
-  skills/illuops/scripts/workflow-validate
-  skills/illuops/scripts/comfy-execute
-  skills/illuops/scripts/visual-evaluate
-  skills/illuops/templates/comfy-workflows/
-  skills/illuops/templates/control-stacks/
-  projects/
-  evals/
-```
+### Production Pack 2: Presentation And Document
 
-Then add MCP and A2A only after the skill and CLI behavior are stable. Skill compatibility gives Codex and Claude Code the simplest shared install surface. MCP gives structured tools. A2A gives cross-agent interoperability.
+`presentation_document_pack` must prove the same lifecycle without image-pack assumptions. It must produce editable/source-native artifacts such as PPTX, DOCX, Markdown, and HTML, plus static review/export evidence.
 
-## Design Principle
+Required artifact families include:
 
-Do not build an "agent framework demo." Build a reproducible workflow product:
+- `brief_manifest.json`
+- `outline_manifest.json`
+- `source_material_manifest.json`
+- `deck_doc_plan.json`
+- `deck_doc_artifact_manifest.json`
+- `review_session.json`
+- `revision_action.json` or `feedback.json`
+- `final_package_manifest.json`
+- `handoff_manifest.json`
 
-1. Clear activation conditions in `SKILL.md`.
-2. Explicit gates and stop points.
-3. Project workspace with durable state.
-4. Deterministic scripts for file transforms and validation.
-5. Human-readable artifacts after every phase.
-6. Evaluation tasks that prove the harness works outside a happy-path chat.
-7. Security controls for shell, network, secrets, prompt injection, tool poisoning, and supply chain.
+It must reject source-only image exports, hidden instructions in source documents or speaker notes, unsupported active content, missing source-rights evidence, and final packages that cannot map reviewed slides, sections, or pages to final artifacts.
 
-## ComfyUI Control Thesis
+## Four Epics
 
-An LLM can control ComfyUI's pipeline surface if the harness treats ComfyUI as a typed graph runtime:
+Epic A: Core substrate and state
 
-1. Discover nodes, models, templates, and system limits from ComfyUI APIs.
-2. Compile creator intent into an intermediate graph plan.
-3. Lower the graph plan into ComfyUI API-format workflow JSON.
-4. Validate node classes, inputs, model files, and resource budgets before execution.
-5. Queue the workflow, monitor WebSocket progress, collect history and images.
-6. Run visual and semantic checks before exporting or iterating.
+- Skill and CLI contract.
+- Generic provisional domain lifecycle schemas.
+- SQLite-WAL source-of-truth state.
+- Exported manifests for handoff, finalization, and cross-agent resume.
+- Actor identity, trust, handoff, finalize, and resume-confirmation flow.
 
-The LLM should not directly free-write arbitrary workflows without a compiler, schema validation, and risk policy.
+Epic B: Isolation, brokerage, and security
+
+- Out-of-process workers.
+- Capability broker for file, network, provider, budget, memory, tool, and agent side effects.
+- Idempotency, retry, timeout, cancel, and terminal-outcome semantics.
+- Worker sandbox policy.
+- Supply-chain attestation and AIBOM.
+- Localhost UI hardening and spend ledger.
+
+Epic C: Image reference domain pack
+
+- Civitai/HF/AIR resolvers.
+- Comfy workflow import.
+- Typed graph patches.
+- Comfy Cloud thin polling wrapper.
+- Local or cloud execution evidence.
+- Review gallery and final package proof.
+
+Epic D: `presentation_document_pack`
+
+- Edit-based deck and document generation.
+- Source-native editable artifacts.
+- Static review and export surfaces.
+- Source-material rights checks.
+- Revision actions and clean handoff.
+
+## Non-Goals
+
+IlluOps is not:
+
+- A ComfyUI fork.
+- A new MCP server as the core product.
+- An image app with agent features attached.
+- A generic prompt wrapper.
+- A code task list before `/speckit-taskstoissues`.
+- A system that lets the LLM free-write arbitrary workflow JSON without capability discovery and validation.
+
+## Security Model
+
+Treat all external material as untrusted data, including web content, MCP results, provider outputs, document text, slide notes, image metadata, workflow labels, tool descriptors, A2A messages, and peer-agent cards.
+
+Future implementation must cover:
+
+- Prompt-carrier isolation and taint maps.
+- MCP tool poisoning and untrusted annotations.
+- OWASP agentic and LLM risk categories.
+- AgentDojo and AgentDyn-style injection fixtures.
+- Worker sandbox limits and broker-only side effects.
+- Secret redaction and no raw secret retention.
+- Provider-profile caps and spend-abuse controls.
+- Retention classes, proof-gated cleanup, and tombstone events.
+
+## Repository Contents
+
+- [cross-agent-image-harness.md](cross-agent-image-harness.md): canonical current plan.
+- [LICENSE](LICENSE): Apache-2.0 license for this repository's own content.
+- [LICENSES/README.md](LICENSES/README.md): license and third-party asset boundaries.
+
+Local agent/session artifacts such as `.omo/`, `.codex/`, `codex/`, `.claude/`, `.claude-code/`, and `claude-code/` are intentionally ignored and must not be treated as publishable source unless explicitly promoted into tracked files.
